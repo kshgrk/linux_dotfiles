@@ -26,8 +26,8 @@ window:
   # Specified in number of pixels.
   # If the position is not set, the window manager will handle the placement.
   position:
-    x: 180
-    y: 70
+    x: 70
+    y: 65
 
   # Window padding (changes require restart)
   #
@@ -89,7 +89,7 @@ scrolling:
 # Font configuration
 font:
   # Normal (roman) font face
-  size: 11
+  size: 12
   normal:
     # Font family
     #
@@ -294,7 +294,7 @@ cursor:
   #   - ▇ Block
   #   - _ Underline
   #   - | Beam
-  style: Block
+  style: Beam
 
   # Vi mode cursor style
   #
