@@ -145,6 +145,8 @@ else
   bindkey -M viins "^[3;5~" delete-char
   bindkey -M vicmd "^[3;5~" delete-char
 fi
+bindkey "^[[1;5C" forward-word
+bindkey "^[[1;5D" backward-word
 
 ## Useful aliases
 # Replace ls with exa
@@ -182,6 +184,7 @@ alias grep='grep --color=auto'
 alias fgrep='fgrep --color=auto'
 alias egrep='egrep --color=auto'
 alias hw='hwinfo --short'                                   # Hardware Info
+alias big="expac -H M '%m\t%n' | sort -h | nl"              # Sort installed packages
 alias gitpkg='pacman -Q | grep -i "\-git" | wc -l'			# List amount of -git packages
 
 # Get fastest mirrors 
