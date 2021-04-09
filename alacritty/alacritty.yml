@@ -49,7 +49,7 @@ window:
   # Values for `decorations` (macOS only):
   #     - transparent: Title bar, transparent background and title bar buttons
   #     - buttonless: Title bar, transparent background, but no title bar buttons
-  decorations: full
+  decorations: none
 
   # Startup Mode (changes require restart)
   #
@@ -276,7 +276,7 @@ draw_bold_text_with_bright_colors: true
 #
 # Window opacity as a floating point number from `0.0` to `1.0`.
 # The value `0.0` is completely transparent and `1.0` is opaque.
-background_opacity: 0.7
+background_opacity: 0.3
 
 #selection:
   #semantic_escape_chars: ",│`|:\"' ()[]{}<>\t"
@@ -550,8 +550,8 @@ key_bindings:
   - { key: Equals,   mods: Control,       action: IncreaseFontSize }
   - { key: Plus,     mods: Control,       action: IncreaseFontSize }
   - { key: Minus,    mods: Control,       action: DecreaseFontSize }
-  - { key: Minus,    mods: Control,       action: DecreaseFontSize }
   - { key: N,        mods: Control,       action: SpawnNewInstance }
+  - { key: M,        mods: Control,       action: Minimize         }
 
 
 #debug:
@@ -576,31 +576,31 @@ key_bindings:
   #print_events: false
 
 # Custom colorscheme fitting Sweetified theme
-# colors:
-  # primary:
-    # background: '0x0a1124'
-    # foreground: '0xeec49a'
-  # cursor:
-    # text:       '0x0a1124'
-    # cursor:     '0xeec49a'
-  # normal:
-    # black:      '0x0a1124'
-    # red:        '0x5F4149'
-    # green:      '0xEB3247'
-    # yellow:     '0xBC4349'
-    # blue:       '0xF35645'
-    # magenta:    '0xF6A73B'
-    # cyan:       '0xFAD32F'
-    # white:      '0xeec49a'
-  # bright:
-    # black:      '0xa6896b'
-    # red:        '0x5F4149'
-    # green:      '0xEB3247'
-    # yellow:     '0xBC4349'
-    # blue:       '0xF35645'
-    # magenta:    '0xF6A73B'
-    # cyan:       '0xFAD32F'
-    # white:      '0xeec49a'
+#colors:
+  #primary:
+    #background: '0x0a1124'
+    #foreground: '0xeec49a'
+  #cursor:
+    #text:       '0x0a1124'
+    #cursor:     '0xeec49a'
+  #normal:
+    #black:      '0x0a1124'
+    #red:        '0x5F4149'
+    #green:      '0xEB3247'
+    #yellow:     '0xBC4349'
+    #blue:       '0xF35645'
+    #magenta:    '0xF6A73B'
+    #cyan:       '0xFAD32F'
+    #white:      '0xeec49a'
+  #bright:
+    #black:      '0xa6896b'
+    #red:        '0x5F4149'
+    #green:      '0xEB3247'
+    #yellow:     '0xBC4349'
+    #blue:       '0xF35645'
+    #magenta:    '0xF6A73B'
+    #cyan:       '0xFAD32F'
+    #white:      '0xeec49a'
 
 # Colors (Gruvbox dark)
 colors:
@@ -661,3 +661,4 @@ colors:
     cyan:    '#427b58'
     white:   '#928374'
   # indexed_colors: []
+
