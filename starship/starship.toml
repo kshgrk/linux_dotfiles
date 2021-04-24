@@ -70,7 +70,6 @@ disabled = true
 [character]
 success_symbol = " [╰─λ](bold red)"
 error_symbol = " [×](bold red)"
-use_symbol_for_status = true
 
 # SYMBOLS
 [status]
@@ -88,7 +87,7 @@ symbol = " "
 [dart]
 symbol = " "
 
-[docker]
+[docker_context]
 symbol = " "
 
 [elixir]
@@ -102,9 +101,6 @@ symbol = " "
 
 [golang]
 symbol = " "
-
-[haskell]
-symbol = " "
 
 [hg_branch]
 symbol = " "
