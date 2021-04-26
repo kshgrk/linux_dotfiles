@@ -1,24 +1,41 @@
-﻿## Hide welcome message
+﻿## Set values
+# Hide welcome message
 set fish_greeting
 set VIRTUAL_ENV_DISABLE_PROMPT "1"
 set -x MANPAGER "sh -c 'col -bx | bat -l man -p'"
-## Source .profile to apply its values
+
+# Set settings for https://github.com/franciscolourenco/done
+set -U __done_min_cmd_duration 10000
+set -U __done_notification_urgency_level low
+
+
+## Environment setup
+# Apply .profile
 source ~/.profile
 
-
-## Add ~/.local/bin to PATH
+# Add ~/.local/bin to PATH
 if test -d ~/.local/bin
     if not contains -- ~/.local/bin $PATH
         set -p PATH ~/.local/bin
     end
 end
 
+# Add depot_tools to PATH
+if test -d ~/Applications/depot_tools
+    if not contains -- ~/Applications/depot_tools $PATH
+        set -p PATH ~/Applications/depot_tools
+    end
+end
+
 
 ## Starship prompt
-source ("/usr/bin/starship" init fish --print-full-init | psub)
+if status --is-interactive
+   source ("/usr/bin/starship" init fish --print-full-init | psub)
+end
 
 
-## Functions needed for !! and !$ https://github.com/oh-my-fish/plugin-bang-bang
+## Functions
+# Functions needed for !! and !$ https://github.com/oh-my-fish/plugin-bang-bang
 function __history_previous_command
   switch (commandline -t)
   case "!"
@@ -46,8 +63,7 @@ else
   bind '$' __history_previous_command_arguments
 end
 
-
-## Fish command history
+# Fish command history
 function history
     builtin history --show-time='%F %T '
 end
@@ -56,8 +72,7 @@ function backup --argument filename
     cp $filename $filename.bak
 end
 
-
-## Copy DIR1 DIR2
+# Copy DIR1 DIR2
 function copy
     set count (count $argv | tr -d \n)
     if test "$count" = 2; and test -d "$argv[1]"
@@ -69,17 +84,22 @@ function copy
     end
 end
 
+## Import colorscheme from 'wal' asynchronously
+if type "wal" >> /dev/null 2>&1
+   cat ~/.cache/wal/sequences
+end
 
 ## Useful aliases
 # Replace ls with exa
-alias ls='exa -al --color=always --group-directories-first' # preferred listing
-alias la='exa -a --color=always --group-directories-first'  # all files and dirs
-alias ll='exa -l --color=always --group-directories-first'  # long format
-alias lt='exa -aT --color=always --group-directories-first' # tree listing
-alias l.="exa -a | egrep '^\.'"
+alias ls='exa -al --color=always --group-directories-first --icons' # preferred listing
+alias la='exa -a --color=always --group-directories-first --icons'  # all files and dirs
+alias ll='exa -l --color=always --group-directories-first --icons'  # long format
+alias lt='exa -aT --color=always --group-directories-first --icons' # tree listing
+alias l.="exa -a | egrep '^\.'"                                     # show only dotfiles
 
 # Replace some more things with better alternatives
-[ ! -x /usr/bin/bat ] && [ -x /usr/bin/cat ] && alias cat='bat'
+alias cat='bat --style header --style rules --style snip --style changes --style header'
+[ ! -x /usr/bin/yay ] && [ -x /usr/bin/paru ] && alias yay='paru --bottomup'
 
 # Common use
 alias aup="pamac upgrade --aur"
@@ -88,6 +108,7 @@ alias fixpacman="sudo rm /var/lib/pacman/db.lck"
 alias tarnow='tar -acf '
 alias untar='tar -zxvf '
 alias wget='wget -c '
+alias rmpkg="sudo pacman -Rdd"
 alias psmem='ps auxf | sort -nr -k 4'
 alias psmem10='ps auxf | sort -nr -k 4 | head -10'
 alias upd='sudo reflector --latest 5 --age 2 --fastest 5 --protocol https --sort rate --save /etc/pacman.d/mirrorlist && cat /etc/pacman.d/mirrorlist && sudo pacman -Syu && fish_update_completions && sudo updatedb'
@@ -105,6 +126,7 @@ alias b='bpytop'
 alias cc='sudo sh -c "echo 1 > /proc/sys/vm/drop_caches"'
 alias bb='sudo sh -c "echo 2 > /proc/sys/vm/drop_caches"'
 alias cb='sudo sh -c "echo 3 > /proc/sys/vm/drop_caches"'
+alias m='cd /run/media/kushagrak'
 alias dir='dir --color=auto'
 alias vdir='vdir --color=auto'
 alias grep='grep --color=auto'
@@ -123,30 +145,21 @@ alias mirrora="sudo reflector --latest 50 --number 20 --sort age --save /etc/pac
 # Help people new to Arch
 alias apt='man pacman'
 alias apt-get='man pacman'
+alias helpme='cht.sh --shell'
 alias please='sudo'
 alias tb='nc termbin.com 9999'
-alias paru="paru --bottomup"
 
-#Cleanup orphaned packages
+# Cleanup orphaned packages
 alias cleanup='sudo pacman -Rns (pacman -Qtdq)'
 
-#get the error messages from journalctl
+# Get the error messages from journalctl
 alias jctl="journalctl -p 3 -xb"
 
-#Recent Installed Packages
+# Recent installed packages
 alias rip="expac --timefmt='%Y-%m-%d %T' '%l\t%n %v' | sort | tail -200 | nl"
 
-# Replace yay with paru
-[ ! -x /usr/bin/yay ] && [ -x /usr/bin/paru ] && alias yay='paru'
 
-
-## Import colorscheme from 'wal' asynchronously
-if type "wal" >> /dev/null 2>&1
-   cat ~/.cache/wal/sequences
-end
-
-
-# ## Run paleofetch if session is interactive
+## Run paleofetch if session is interactive
 # if status --is-interactive
-   # paleofetch
+#    neofetch
 # end
