@@ -1,0 +1,353 @@
+;=====================================================
+;
+;   To learn more about how to configure Polybar
+;   go to https://github.com/jaagr/polybar
+;
+;   The README contains alot of information
+;
+;=====================================================
+
+[colors]
+background = #070015
+background-alt = #444
+foreground = #00B7B6
+foreground-alt = #555555
+primary = #620598
+secondary = #e60053
+underline = #3288D2
+alert = #bd2c40
+
+[global/wm]
+margin-top = 5
+margin-bottom = 5
+
+;------------------------
+[bar/left]
+monitor = ${env:MONITOR:eDP-1}
+width = 100%
+height = 23
+offset-x = 0
+offset-y = 0
+
+background = ${colors.background}
+foreground = ${colors.foreground}
+
+overline-size = 2
+overline-color = #f00
+underline-size = 2
+;underline-color = ${colors.primary}
+
+border-bottom = 3
+;border-bottom-color = ${colors.primary}
+
+spacing = 2
+padding-left = 2
+padding-right = 2
+module-margin-left = 2
+module-margin-right = 2
+
+font-0 = fixed:pixelsize=10;0
+font-1 = unifont:size=10:heavy:fontformat=truetype;-2
+font-2 = siji:pixelsize=10;0
+font-3 = FontAwesome:pixelsize=10;0
+
+modules-left = i3 xwindow xkeyboard
+modules-center = date
+modules-right = memory wlan cpu temperature battery volume powermenu 
+
+tray-position = right
+tray-padding = 2
+;tray-transparent = true
+;tray-background = #0063ff
+
+wm-restack = i3
+
+;override-redirect = true
+
+
+scroll-up = i3wm-wsnext
+scroll-down = i3wm-wsprev
+pin-workspaces = true
+enable-click = false
+enable-scroll = false
+
+;------------------------------
+[bar/right]
+monitor = ${env:MONITOR:eDP-1}
+width = 100%
+height = 23
+offset-x = 0
+offset-y = 0
+
+;background = ${xrdb:color9}
+background = ${colors.background}
+foreground = ${colors.foreground}
+
+overline-size = 2
+overline-color = #f00
+underline-size = 2
+;underline-color = ${colors.primary}
+
+border-bottom = 3
+;border-bottom-color = ${colors.primary}
+
+spacing = 2
+padding-left = 2
+padding-right = 2
+module-margin-left = 2
+module-margin-right = 2
+
+font-0 = fixed:pixelsize=8;0
+font-1 = unifont:size=6:heavy:fontformat=truetype;-2
+font-2 = siji:pixelsize=10;0
+font-3 = FontAwesome:pixelsize=10;0
+
+modules-left = i3 xwindow
+modules-center = date
+modules-right = wlan temperature battery volume
+
+;tray-position = right
+;tray-padding = 2
+;tray-transparent = true
+;tray-background = #0063ff
+
+wm-restack = i3
+
+scroll-up = i3wm-wsnext
+scroll-down = i3wm-wsprev
+pin-workspaces = true
+enable-click = false
+enable-scroll = false
+
+[module/xwindow]
+type = internal/xwindow
+label = %title:0:30:...%
+format-underline = ${colors.underline}
+
+[module/i3]
+type = internal/i3
+format = <label-state> <label-mode>
+index-sort = true
+wrapping-scroll = false
+
+label-mode-padding = 2
+label-mode-foreground = #000
+label-mode-background = ${colors.primary}
+
+label-focused = %index%
+label-focused-foreground = $(colors.underline)
+label-focused-background = ${colors.primary}
+;label-focused-underline = ${colors.primary}
+label-focused-padding = 2
+
+label-unfocused = %index%
+label-unfocused-padding = 2
+
+label-urgent = %index%!
+label-urgent-background = ${colors.alert}
+label-urgent-padding = 2
+
+label-visible = %index%
+label-visible-background = ${colors.background}
+;label-visible-underline = #383a3b
+label-visible-padding = ${self.label-focused-padding}
+
+[module/backlight]
+type = internal/amdgpu_bl0
+
+format = <label> <bar>
+label = BL
+
+bar-width = 10
+bar-indicator = │
+bar-indicator-foreground = #ff
+bar-indicator-font = 2
+bar-fill = ─
+bar-fill-font = 2
+bar-fill-foreground = #9f78e1
+bar-empty = ─
+bar-empty-font = 2
+bar-empty-foreground = ${colors.foreground-alt}
+
+[module/xkeyboard]
+type = internal/xkeyboard
+#blacklist-0 = num lock
+
+format-prefix = " "
+
+[module/wlan]
+type = internal/network
+interface = wlan0
+interval = 1.0
+udspeed-minwidth = 3
+
+format-connected = <label-connected>
+;format-connected-underline = #ff5555
+;format-disconnected-underline = ${self.format-connected-underline}
+
+label-connected =  %downspeed%  %upspeed% 
+label-disconnected = %ifname% disconnected
+label-disconnected-foreground = ${colors.foreground-alt}
+
+ramp-signal-0 = 
+ramp-signal-1 = 
+ramp-signal-2 = 
+ramp-signal-3 = 
+ramp-signal-4 = 
+ramp-signal-foreground = ${colors.foreground-alt}
+
+[module/date]
+type = internal/date
+interval = 1
+
+date = " %a, %d %B "
+time = "%H:%M"
+
+format-prefix-foreground = ${colors.background}
+;format-background = ${colors.primary}
+format-foreground = ${colors.foreground}
+format-underline = ${colors.underline}
+label = "%date% %time%"
+
+
+[module/volume]
+type = internal/pulseaudio
+
+master-soundcard = default
+speaker-soundcard = default
+headphone-soundcard = default
+
+format-volume = <label-volume><bar-volume>
+label-volume = 
+label-volume-foreground = ${root.foreground}
+
+format-muted-prefix = " "
+format-muted-foreground = ${colors.foreground-alt}
+label-muted = MUTED
+
+bar-volume-width = 12
+bar-volume-foreground-0 = #55aa55
+bar-volume-foreground-1 = #55aa55
+bar-volume-foreground-2 = #55aa55
+bar-volume-foreground-3 = #55aa55
+bar-volume-foreground-4 = #55aa55
+bar-volume-foreground-5 = #f5a70a
+bar-volume-foreground-6 = #ff5555
+bar-volume-gradient = false
+bar-volume-indicator = │
+bar-volume-indicator-font = 2
+bar-volume-indicator-foreground = #ff
+bar-volume-fill = ─
+bar-volume-fill-font = 2
+bar-volume-empty = ─
+bar-volume-empty-font = 2
+bar-volume-empty-foreground = ${colors.foreground-alt}
+
+[module/memory]
+type = internal/memory
+interval = 3
+format = <label>
+format-prefix = " "
+label = " %gb_used% "
+
+[module/battery]
+type = internal/battery
+battery = BAT1
+adapter = ACAD
+full-at = 98
+
+format-charging = <animation-charging><label-charging>
+;format-charging-underline = #ff5555
+
+format-discharging = <ramp-capacity><label-discharging>
+;format-discharging-underline = ${self.format-charging-underline}
+
+format-full-prefix = 
+format-full-prefix-foreground = ${colors.foreground}
+;format-full-underline = ${self.format-charging-underline}
+
+ramp-capacity-0 = 
+ramp-capacity-1 = 
+ramp-capacity-2 = 
+
+
+animation-charging-0 = 
+animation-charging-1 = 
+animation-charging-2 = 
+animation-charging-foreground = ${colors.foreground}
+animation-charging-framerate = 750
+
+[module/powermenu]
+type = custom/menu
+
+format-spacing = 1
+
+label-open = 
+label-open-foreground = ${colors.primary}
+label-close =  cancel
+label-close-foreground = ${colors.primary}
+label-separator = |
+label-separator-foreground = ${colors.foreground-alt}
+
+menu-0-0 = reboot
+menu-0-0-exec = menu-open-1
+menu-0-1 = power off
+menu-0-1-exec = menu-open-2
+menu-0-2 = suspend
+menu-0-2-exec = menu-open-3
+menu-0-3 = logout
+menu-0-3-exec = menu-open-4
+
+menu-1-0 = cancel
+menu-1-0-exec = menu-open-0
+menu-1-1 = reboot
+menu-1-1-exec = systemctl reboot
+
+menu-2-0 = power off
+menu-2-0-exec = systemctl poweroff
+menu-2-1 = cancel
+menu-2-1-exec = menu-open-0
+
+menu-3-0 = suspend
+menu-3-0-exec = systemctl suspend
+menu-3-1 = cancel
+menu-3-1-exec = menu-open-0
+
+menu-4-0 = logout
+menu-4-0-exec = i3-msg exit
+menu-4-1 = cancel
+menu-4-1-exec = menu-open-0
+
+[module/temperature]
+type = internal/temperature
+thermal-zone = 0
+warn-temperature = 80
+
+format = <ramp><label>
+;format-underline = #ff5555
+format-warn = <ramp><label-warn>
+;format-warn-underline = ${self.format-underline}
+
+label = %temperature-c%
+label-warn = %temperature-c%
+label-warn-foreground = ${colors.secondary}
+
+ramp-0 = 
+ramp-1 = 
+ramp-2 = 
+
+[module/archupdates]
+type = custom/script
+interval = 1200
+format = <label>
+;format-underline = #ff5555
+label = "%output:0:30%"
+exec = .config/polybar/pkg.sh
+exec-if = "ping -q -w 2 -c 1 176.34.135.167 > /dev/null"
+
+[module/cpu]
+type = internal/cpu
+interval = 1
+label =  %percentage%%
+;format-underline = #ff5555
+

@@ -1,4 +1,4 @@
-﻿## Set values
+## Set values
 # Hide welcome message
 set fish_greeting
 set VIRTUAL_ENV_DISABLE_PROMPT "1"
@@ -11,7 +11,7 @@ set -U __done_notification_urgency_level low
 
 ## Environment setup
 # Apply .profile
-source ~/.profile
+# source ~/.profile
 
 # Add ~/.local/bin to PATH
 if test -d ~/.local/bin
@@ -127,6 +127,7 @@ alias cc='sudo sh -c "echo 1 > /proc/sys/vm/drop_caches"'
 alias bb='sudo sh -c "echo 2 > /proc/sys/vm/drop_caches"'
 alias cb='sudo sh -c "echo 3 > /proc/sys/vm/drop_caches"'
 alias m='cd /run/media/kushagrak'
+alias cod='cd /run/media/kushagrak/Linux/Buffer/coding'
 alias dir='dir --color=auto'
 alias vdir='vdir --color=auto'
 alias grep='grep --color=auto'
