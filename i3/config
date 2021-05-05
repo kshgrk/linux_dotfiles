@@ -195,8 +195,13 @@ bindsym $mod+Shift+r restart
 bindsym $mod+F1 exec xed ~/.config/i3/keybindings
 
 # Backlight control
+<<<<<<< HEAD
 #bindsym $mod+U exec xbacklight +5
 #bindsym $mod+D exec xbacklight -5
+=======
+bindsym $XF86MonBrightnessUp exec xbacklight +5
+bindsym $XF86MonBrightnessDown exec xbacklight -5
+>>>>>>> 05f39c47e302c49ff7ddc613440e6ae4dca6520f
 
 # change focus
 bindsym $mod+j focus left
@@ -265,8 +270,13 @@ bindsym XF86AudioLowerVolume exec amixer -D pulse sset Master 5%- && pkill -RTMI
 #bindsym XF86AudioMute exec pamixer -t && dunstify -h string:x-dunst-stack-tag:mute mute: $(pamixer --get-mute)!
 
 # gradular volume control
+<<<<<<< HEAD
 #bindsym XF86AudioRaiseVolume exec amixer -D pulse sset Master 1%+ && pkill -RTMIN+1 i3blocks
 #bindsym XF86AudioLowerVolume exec amixer -D pulse sset Master 1%- && pkill -RTMIN+1 i3blocks
+=======
+bindsym $XF86AudioRaiseVolume exec amixer -D pulse sset Master 1%+ && pkill -RTMIN+1 i3blocks
+bindsym $XF86AudioLowerVolume exec amixer -D pulse sset Master 1%- && pkill -RTMIN+1 i3blocks
+>>>>>>> 05f39c47e302c49ff7ddc613440e6ae4dca6520f
 
 # mute
 #bindsym XF86AudioMute exec amixer sset Master toggle && killall -USR1 i3blocks
@@ -283,7 +293,11 @@ bindsym $mod+p exec /usr/local/bin/switch-audio-port
 
 ## App shortcuts
 bindsym $mod+w exec /usr/bin/firefox
+<<<<<<< HEAD
 bindsym $mod+n exec /usr/bin/pcmanfm
+=======
+bindsym $mod+n exec /usr/bin/thunar
+>>>>>>> 05f39c47e302c49ff7ddc613440e6ae4dca6520f
 bindsym Print exec "scrot ~/%Y-%m-%d-%T-screenshot.png"
 
 ##########################################
@@ -313,6 +327,7 @@ set $ws10 "10"
 #workspace $ws5 output HDMI-0
 
 # bind program to workspace and focus to them on startup:
+<<<<<<< HEAD
 #assign [class="alacritty"] $ws1
 assign [class="(?i)firefox"] $ws2
 assign [class="File-manager"] $ws3
@@ -324,6 +339,19 @@ assign [class="File-manager"] $ws3
 for_window [class=alacritty] focus
 for_window [class=(?i)firefox] focus
 #for_window [class=File-manager] focus
+=======
+assign [class="Xfce4-terminal"] $ws1
+assign [class="(?i)firefox"] $ws2
+assign [class="Thunar"] $ws3
+#assign [class="Thunderbird"] $ws4
+#assign [class="TelegramDesktop"] $ws5
+
+
+# automatic set focus new window if it opens on another workspace then the current:
+for_window [class=Xfce4-terminal] focus
+for_window [class=(?i)firefox] focus
+#for_window [class=Thunar] focus
+>>>>>>> 05f39c47e302c49ff7ddc613440e6ae4dca6520f
 #for_window [class=Thunderbird] focus
 #for_window [class=TelegramDesktop] focus
 
@@ -419,6 +447,7 @@ client.urgent		    $urgentred	$urgentred	$white		$purple		$yellowbrown
 
  #Start i3bar to display a workspace bar 
  #(plus the system information i3status finds out, if available)
+<<<<<<< HEAD
 #bar {
 #		font pango:Noto Sans Regular 10, FontAwesome 10
 #		status_command i3blocks -c ~/.config/i3/i3blocks.conf
@@ -448,6 +477,37 @@ client.urgent		    $urgentred	$urgentred	$white		$purple		$yellowbrown
 #}
 
 exec --no-startup-id polybar left
+=======
+bar {
+		font pango:Noto Sans Regular 10, FontAwesome 10
+		status_command i3blocks -c ~/.config/i3/i3blocks.conf
+	    	position top 
+	    	i3bar_command i3bar --transparency
+# it could be that you have no primary display set: set one (xrandr --output <output> --primary)
+# reference: https://i3wm.org/docs/userguide.html#_tray_output
+		    tray_output primary
+		    tray_padding 0
+
+# When strip_workspace_numbers is set to yes, 
+# any workspace that has a name of the form 
+# “[n][:][NAME]” will display only the name.
+strip_workspace_numbers yes
+##strip_workspace_name no
+
+		    colors {
+		    separator          $purple
+		    background         $darkgrey
+		    statusline         $white
+#                          		border 		        bg		txt		indicator
+		focused_workspace	$mediumgrey	   	$grey		$darkgrey	$purple
+		active_workspace	$lightblue      	$mediumgrey	$darkgrey	$purple
+		inactive_workspace	$darkgrey   		$darkgrey	$grey		$purple
+		urgent_workspace	$urgentred	    	$urgentred	$white		$purple 
+	}
+}
+
+#exec --no-startup-id polybar BAR
+>>>>>>> 05f39c47e302c49ff7ddc613440e6ae4dca6520f
 
 # you can add different bars for multidisplay setups on each display:
 # set output HDMI-0 to the display you want the bar, --transparency can be set.
@@ -507,7 +567,10 @@ bindsym F10 exec rofi -show window -display-window "Window : " -line-padding 4 \
 #exec_always sudo hdparm -B 1 /dev/sda
 
 exec_always --no-startup-id xgamma -gamma 0.85
+<<<<<<< HEAD
 exec_always --no-startup-id brightnessctl set 15%
 exec_always --no-startup-id xinput --set-prop 15 "libinput Natural Scrolling Enabled" 1
 
 bindsym $mod+Ctrl+s exec /usr/bin/flameshot
+=======
+>>>>>>> 05f39c47e302c49ff7ddc613440e6ae4dca6520f
