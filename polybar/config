@@ -71,7 +71,7 @@ pin-workspaces = true
 enable-click = false
 enable-scroll = false
 
-;------------------------------
+;-------------------------------
 [bar/right]
 monitor = ${env:MONITOR:eDP-1}
 width = 100%
