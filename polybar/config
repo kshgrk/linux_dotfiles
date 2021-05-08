@@ -37,7 +37,7 @@ overline-color = #f00
 underline-size = 2
 ;underline-color = ${colors.primary}
 
-border-bottom = 3
+border-bottom-size = 3
 ;border-bottom-color = ${colors.primary}
 
 spacing = 2
@@ -51,7 +51,7 @@ font-1 = unifont:size=10:heavy:fontformat=truetype;-2
 font-2 = siji:pixelsize=10;0
 font-3 = FontAwesome:pixelsize=10;0
 
-modules-left = bspwm xwindow
+modules-left = bspwm xwindow caps num
 modules-center = date
 modules-right = backlight memory wlan cpu temperature battery volume powermenu 
 
@@ -205,15 +205,15 @@ format-connected = <label-connected>
 ;format-connected-underline = #ff5555
 ;format-disconnected-underline = ${self.format-connected-underline}
 
-label-connected =  %downspeed%  %upspeed% 
+label-connected =   %downspeed%  %upspeed% 
 label-disconnected = %ifname% disconnected
 label-disconnected-foreground = ${colors.foreground-alt}
 
-ramp-signal-0 = 
-ramp-signal-1 = 
-ramp-signal-2 = 
-ramp-signal-3 = 
-ramp-signal-4 = 
+ramp-signal-0 = 
+ramp-signal-1 = 
+ramp-signal-2 = 
+ramp-signal-3 = 
+ramp-signal-4 = 
 ramp-signal-foreground = ${colors.foreground-alt}
 
 [module/date]
@@ -232,36 +232,51 @@ label = "%date% %time%"
 
 [module/volume]
 type = internal/pulseaudio
+; Sink to be used, if it exists (find using `pacmd list-sinks`, name field)
+; If not, uses default sink
+; sink = alsa_output.pci-0000_12_00.3.analog-stereo
+; sink = alsa_output.pci-0000_00_1b.0.analog-stereo
 
-master-soundcard = default
-speaker-soundcard = default
-headphone-soundcard = default
+; Use PA_VOLUME_UI_MAX (~153%) if true, or PA_VOLUME_NORM (100%) if false
+; Default: true
+use-ui-max = false
 
-format-volume = <label-volume><bar-volume>
-label-volume = 
-label-volume-foreground = ${root.foreground}
+; Interval for volume increase/decrease (in percent points)
+; Default: 5
+interval = 5
 
-format-muted-prefix = " "
-format-muted-foreground = ${colors.foreground-alt}
-label-muted = MUTED
+; Available tags:
+;   <label-volume> (default)
+;   <ramp-volume>
+;   <bar-volume>
+format-volume = <label-volume>
 
-bar-volume-width = 12
-bar-volume-foreground-0 = #55aa55
-bar-volume-foreground-1 = #55aa55
-bar-volume-foreground-2 = #55aa55
-bar-volume-foreground-3 = #55aa55
-bar-volume-foreground-4 = #55aa55
-bar-volume-foreground-5 = #f5a70a
-bar-volume-foreground-6 = #ff5555
-bar-volume-gradient = false
-bar-volume-indicator = │
-bar-volume-indicator-font = 2
-bar-volume-indicator-foreground = #ff
-bar-volume-fill = ─
-bar-volume-fill-font = 2
-bar-volume-empty = ─
-bar-volume-empty-font = 2
-bar-volume-empty-foreground = ${colors.foreground-alt}
+; Available tags:
+;   <label-muted> (default)
+;   <ramp-volume>
+;   <bar-volume>
+format-muted = <label-muted>
+
+; Available tokens:
+;   %percentage% (default)
+;   %decibels% (unreleased)
+label-volume = %{T1} %{T-} %{T2}%percentage%%%{T-}
+label-volume-foreground = ${colors.dark-green}
+
+; Available tokens:
+;   %percentage% (default)
+;   %decibels% (unreleased)
+label-muted = %{T1}MUTED %{T2}shhh!%{T-}
+label-muted-foreground = ${colors.dark-green}
+
+; Only applies if <ramp-volume> is used
+ramp-volume-0 = %{T1}%{T-}
+ramp-volume-1 = %{T1}奔%{T-}
+ramp-volume-2 = %{T1}墳%{T-}
+
+; Right and Middle click (unreleased)
+click-right = pavucontrol &
+; click-middle =
 
 [module/memory]
 type = internal/memory
@@ -299,7 +314,7 @@ animation-charging-framerate = 750
 
 [module/powermenu]
 type = custom/text
-content = "襤"
+content = ""
 click-left = ~/.config/rofi/powermenu.sh
 content-background = ${colors.blue-darker}
 content-foreground = ${colors.white}

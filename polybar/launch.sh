@@ -8,5 +8,3 @@ while pgrep -u $UID -x polybar >/dev/null; do sleep 1; done
 
 # Launch Polybar
 polybar left -c ~/.config/polybar/config &
-picom &
-xgamma -gamma 0.85
