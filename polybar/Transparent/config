@@ -296,7 +296,7 @@ ramp-2 =  
 
 [module/powermenu]
 type = custom/text
-content = " "
+content = ""
 click-left = ~/.config/rofi/powermenu.sh
 content-background = ${colors.blue-darker}
 content-foreground = ${colors.white}
@@ -337,6 +337,7 @@ content-padding = 0
 [module/logo]
 type = custom/text
 content = ""
+click-left = ~/.config/rofi/drun.sh
 content-padding = 0
 
 [module/battery]
