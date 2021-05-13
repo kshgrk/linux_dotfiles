@@ -7,4 +7,4 @@ killall -q polybar
 while pgrep -u $UID -x polybar >/dev/null; do sleep 1; done
 
 # Launch Polybar
-polybar bar -c ~/.config/pol/config &
+polybar bar -c ~/.config/polybar_transparent/config &

@@ -34,7 +34,7 @@ height = 20
 width = 100%
 ;bottom = true
 offset-y = 5
-#padding = 10
+padding = 3
 
 background = ${colors.background}
 foreground = ${colors.foreground}
@@ -45,10 +45,10 @@ font-0 = fixed:pixelsize=10;0
 #font-1 = unifont:size=10:heavy:fontformat=truetype;-2
 font-1 = siji:pixelsize=10;0
 font-2 = Material Icons:size=13;4
-font-3 = font\-logos:size=10;4
-font-4 = FontAwesome:size=10;2
+font-3 = font\-logos:size=10;0
+font-4 = FontAwesome:size=10;0
 
-modules-right = backlight sps pulseaudio sps temperature sps battery sps memory time cpu sps wlan sps powermenu
+modules-right = backlight sps pulseaudio sps temperature sps battery sps memory sps cpu sps wlan sps powermenu
 
 ; i3
 ; modules-left = launcher i3 xwindow
@@ -57,12 +57,31 @@ modules-right = backlight sps pulseaudio sps temperature sps battery sps memory 
 ; wm-restack = i3
 
 ; bspwm
-modules-left = bspwm xwindow caps sps num
+modules-left = logo bspwm xwindow caps sps num
 scroll-up = bspwm-wsnext
 scroll-down = bspwm-wsprev
 wm-restack = bspwm
 override-redirect = false
 
+modules-center = time
+
+tray-position = right
+tray-detached = false
+
+; Tray icon max size
+tray-maxsize = 16
+
+tray-background = ${colors.bg}
+;offset defined as pixel value (e.g. 35) or percentage (e.g. 50%)
+
+tray-offset-x = 0
+tray-offset-y = 0
+
+; Pad the sides of each tray icon
+tray-padding = 2
+
+; Scale factor for tray clients
+tray-scale = 1
 
 
 ;                      _       _           
@@ -165,22 +184,23 @@ label-occupied-padding = 4
 [module/wlan]
 type = internal/network
 interface = wlan0
-interval = 3.0
+interval = 1.0
+udspeed-minwidth = 3
 
-format-connected =  <label-connected>
-label-connected = %essid%
-label-connected-color1 = ${colors.color1}
+format-connected = <label-connected>
+;format-connected-underline = #ff5555
+;format-disconnected-underline = ${self.format-connected-underline}
 
-format-disconnected = <label-disconnected>
+label-connected =   %downspeed%  %upspeed% 
 label-disconnected = %ifname% disconnected
-label-disconnected-color1 = ${colors.color1}
+label-disconnected-foreground = ${colors.foreground-alt}
 
-ramp-signal-0 = 
-ramp-signal-1 = 
-ramp-signal-2 = 
-ramp-signal-3 = 
-ramp-signal-4 = 
-ramp-signal-color1 = ${colors.color1}
+ramp-signal-0 = 
+ramp-signal-1 = 
+ramp-signal-2 = 
+ramp-signal-3 = 
+ramp-signal-4 = 
+ramp-signal-foreground = ${colors.foreground-alt}
 
 [module/time]
 type = internal/date
@@ -312,6 +332,11 @@ label =  %percentage% %
 [module/sps]
 type = custom/text
 content = "     "
+content-padding = 0
+
+[module/logo]
+type = custom/text
+content = ""
 content-padding = 0
 
 [module/battery]
