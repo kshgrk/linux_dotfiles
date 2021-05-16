@@ -276,7 +276,7 @@ draw_bold_text_with_bright_colors: true
 #
 # Window opacity as a floating point number from `0.0` to `1.0`.
 # The value `0.0` is completely transparent and `1.0` is opaque.
-background_opacity: 0.75
+background_opacity: 0.60
 
 #selection:
   #semantic_escape_chars: ",│`|:\"' ()[]{}<>\t"
@@ -294,7 +294,7 @@ cursor:
   #   - ▇ Block
   #   - _ Underline
   #   - | Beam
-  style: Beam
+  style: Block
 
   # Vi mode cursor style
   #
@@ -325,7 +325,7 @@ live_config_reload: true
 #   - (Linux/BSD) user login shell
 #   - (Windows) powershell
 shell:
-  program: /usr/bin/fish
+  program: /usr/bin/zsh
   args:
     - --login
 
@@ -660,11 +660,11 @@ colors:
 #    magenta: '#8f3f71'
 #    cyan:    '#427b58'
 #    white:   '#928374'
-#  # indexed_colors: []
+  # indexed_colors: []
 
    primary:
-        background: '0x000b1e'
-        foreground: '0x0abdc6'
+        background: '0x000000'
+        foreground: '0x09b1d6'
 
       # Colors that should be used to draw the terminal cursor. If these are unset,
       # the cursor colour will be the inverse of the cell colour.
@@ -705,3 +705,57 @@ colors:
         magenta: '0x9b1fc4'
         cyan:    '0x0abdc6'
         white:   '0xd7d7d5'
+
+#    primary:
+#      background: '0x000b1e'
+#      foreground: '0xa9b1d6'
+#
+#    # Normal colors
+#    normal:
+#      black:   '0x32344a'
+#      red:     '0xf7768e'
+#      green:   '0x9ece6a'
+#      yellow:  '0xe0af68'
+#      blue:    '0x7aa2f7'
+#      magenta: '0xad8ee6'
+#      cyan:    '0x449dab'
+#      white:   '0x787c99'
+#
+#    # Bright colors
+#    bright:
+#      black:   '0x444b6a'
+#      red:     '0xff7a93'
+#      green:   '0xb9f27c'
+#      yellow:  '0xff9e64'
+#      blue:    '0x7da6ff'
+#      magenta: '0xbb9af7'
+#      cyan:    '0x0db9d7'
+#      white:   '0xacb0d0'
+#
+#    tokyo-night-storm: &tokyo-night-storm
+#    # Default colors
+#    primary:
+#      background: '0x000b1e'
+#      foreground: '0xa9b1d6'
+#
+#    # Normal colors
+#    normal:
+#      black:   '0x32344a'
+#      red:     '0xf7768e'
+#      green:   '0x9ece6a'
+#      yellow:  '0xe0af68'
+#      blue:    '0x7aa2f7'
+#      magenta: '0xad8ee6'
+#      cyan:    '0x449dab'
+#      white:   '0x9699a8'
+#
+#    # Bright colors
+#    bright:
+#      black:   '0x444b6a'
+#      red:     '0xff7a93'
+#      green:   '0xb9f27c'
+#      yellow:  '0xff9e64'
+#      blue:    '0x7da6ff'
+#      magenta: '0xbb9af7'
+#      cyan:    '0x0db9d7'
+#      white:   '0xacb0d0'
