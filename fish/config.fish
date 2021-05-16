@@ -13,6 +13,7 @@ set -U __done_notification_urgency_level low
 # Apply .profile
 # source ~/.profile
 
+
 # Add ~/.local/bin to PATH
 if test -d ~/.local/bin
     if not contains -- ~/.local/bin $PATH
@@ -123,6 +124,7 @@ alias h='htop'
 alias n='neofetch | lolcat'
 alias s='sensors'
 alias b='bpytop'
+alias spr='curl -F '\''sprunge=<-'\'' http://sprunge.us'
 alias p='sudo powertop'
 alias clip='rofi -modi "clipboard:greenclip print" -show clipboard -run-command "{cmd}"'
 alias cc='sudo sh -c "echo 1 > /proc/sys/vm/drop_caches"'
