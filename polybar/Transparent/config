@@ -48,7 +48,7 @@ font-2 = Material Icons:size=13;4
 font-3 = font\-logos:size=10;0
 font-4 = FontAwesome:size=10;0
 
-modules-right = backlight sps pulseaudio sps temperature sps battery sps memory sps cpu sps wlan sps powermenu
+modules-right = backlight sps pulseaudio sps temp sps battery sps mem sps cpu sps wlan sps powermenu
 
 ; i3
 ; modules-left = launcher i3 xwindow
@@ -115,11 +115,23 @@ label-empty-font = 2
 label-font = 2
 format-margin = 4
 
+[module/mem]
+type = custom/script
+interval = 3.0s
+exec = ~/.config/polybar_transparent/scripts/mem.sh
+format =  <label>
+
 [module/caps]
 type = custom/script
 interval = 0.5s
 exec = ~/.config/polybar/scripts/cns.sh -c
 format-foreground = ${colors.blue}
+
+[module/temp]
+type = custom/script
+interval = 3.0s
+exec = ~/.config/polybar_transparent/scripts/temp.sh
+format =  <label>
 
 [module/num]
 type = custom/script
@@ -170,7 +182,7 @@ label-focused-underline = ${colors.foreground}
 label-focused-padding = 4
 label-focused-font = 2
 
-label-empty =
+label-empty = 
 
 label-occupied = %index%
 label-occupied-padding = 4

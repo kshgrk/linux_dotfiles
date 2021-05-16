@@ -7,7 +7,7 @@ function capslock() {
   if [ $caps == 'off' ]; then
     echo "%{T1}%{T-}"
   else
-    echo "%{T1}%{T-}"
+    echo "%{T1}%{T-}"
   fi
 
 }
