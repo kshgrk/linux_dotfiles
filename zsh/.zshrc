@@ -2,6 +2,9 @@
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
+export PATH="$PATH:$HOME/flutter/bin"
+export JAVA_HOME="$HOME/Downloads/android-studio/jre"
+
 # Set $PATH if ~/.local/bin exist
 if [ -d "$HOME/.local/bin" ]; then
     export PATH=$HOME/.local/bin:$PATH
@@ -30,6 +33,9 @@ source /usr/share/fzf/completion.zsh
 # Arch Linux command-not-found support, you must have package pkgfile installed
 # https://wiki.archlinux.org/index.php/Pkgfile#.22Command_not_found.22_hook
 [[ -e /usr/share/doc/pkgfile/command-not-found.zsh ]] && source /usr/share/doc/pkgfile/command-not-found.zsh
+
+# Use profiles
+source ~/.profile
 
 
 ## Options section
@@ -173,9 +179,11 @@ alias ......='cd ../../../../..'
 alias c='clear'
 alias e='exit'
 alias h='htop'
-alias n='neofetch'
+alias n='neofetch | lolcat'
 alias s='sensors'
-alias f='fastfetch -l arch'
+alias b='bpytop'
+alias spr='curl -F '\''sprunge=<-'\''http://sprunge.us'
+alias p='sudo powertop'
 alias cc='sudo sh -c "echo 1 > /proc/sys/vm/drop_caches"'
 alias bb='sudo sh -c "echo 2 > /proc/sys/vm/drop_caches"'
 alias cb='sudo sh -c "echo 3 > /proc/sys/vm/drop_caches"'
