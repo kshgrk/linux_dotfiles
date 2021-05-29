@@ -40,7 +40,7 @@ set fileformat=unix
 set smartindent                         " Makes indenting smart
 set autoindent                          " Good auto indent
 "set laststatus=1                        " Always display the status line
-set cursorline                          " Enable highlighting of the current line
+"set cursorline                          " Enable highlighting of the current line
 set number relativenumber
 set background=dark                     " tell vim what the background color looks like
 "set noshowmode                          " We don't need to see things like -- INSERT -- anymore
