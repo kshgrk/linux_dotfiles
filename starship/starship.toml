@@ -1,9 +1,9 @@
 ## FIRST LINE/ROW: Info & Status
 # First param ─┌
 [username]
-format = " [╭─$user]($style)@"
-style_user = "bold red"
-style_root = "bold red"
+format = " [$user]($style) -> "
+style_user = "bold cyan"
+style_root = "bold cyan"
 show_always = true
 
 # Second param
@@ -12,11 +12,11 @@ format = "[$hostname]($style) in "
 style = "bold dimmed red"
 trim_at = "-"
 ssh_only = false
-disabled = false
+disabled = true
 
 # Third param
 [directory]
-style = "purple"
+style = "green"
 truncation_length = 0
 truncate_to_repo = true
 truncation_symbol = "repo: "
@@ -33,7 +33,7 @@ deleted = "x"
 [cmd_duration]
 min_time = 1
 format = "took [$duration]($style)"
-disabled = false
+disabled = true
 
 
 ## SECOND LINE/ROW: Prompt
@@ -68,8 +68,8 @@ disabled = true
 
 # Prompt: param 2 └─
 [character]
-success_symbol = " [╰─λ](bold red)"
-error_symbol = " [×](bold red)"
+success_symbol = " [λ:](cyan)"
+error_symbol = " [×](cyan)"
 
 # SYMBOLS
 [status]
