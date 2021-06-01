@@ -147,13 +147,6 @@ alias mirrord="sudo reflector --latest 50 --number 20 --sort delay --save /etc/p
 alias mirrors="sudo reflector --latest 50 --number 20 --sort score --save /etc/pacman.d/mirrorlist" 
 alias mirrora="sudo reflector --latest 50 --number 20 --sort age --save /etc/pacman.d/mirrorlist" 
 
-# Help people new to Arch
-alias apt='man pacman'
-alias apt-get='man pacman'
-alias helpme='cht.sh --shell'
-alias please='sudo'
-alias tb='nc termbin.com 9999'
-
 # Cleanup orphaned packages
 alias cleanup='sudo pacman -Rns (pacman -Qtdq)'
 
