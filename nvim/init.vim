@@ -132,3 +132,6 @@ Plug 'codota/tabnine-vim'
 Plug 'jiangmiao/auto-pairs'
 Plug 'tpope/vim-commentary'
 call plug#end()
+
+"" gui configuration
+highlight Pmenu ctermbg=gray guibg=gray gui=bold
