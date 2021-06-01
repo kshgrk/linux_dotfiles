@@ -41,7 +41,7 @@ sh ~/.screenlayout/monitor.sh &
 /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
 # Wallpaper
 #nitrogen --restore &
-feh --bg-fill /home/kshgrk/background/wall3.jpg
+feh --bg-fill /home/kshgrk/background/wall5.jpg
 # Dex
 dex -a -s /etc/xdg/autostart/:~/.config/autostart/  
 # Picom
@@ -63,7 +63,10 @@ xgamma -gamma 0.85
 xinput --set-prop 16 "libinput Natural Scrolling Enabled" 1
 
 #optimization
-sudo hdparm -B 1 /dev/sda && sudo ryzenadj -f 60
+sudo hdparm -B 1 /dev/sda
 
 #tear-free
 xrandr --output eDP --set TearFree on
+
+#keys-settings
+xset r rate 230 30
