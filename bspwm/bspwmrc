@@ -5,13 +5,16 @@ pgrep -x sxhkd > /dev/null || sxhkd &
 bspc monitor -d             7 8 9
 
 bspc config border_width        2
-bspc config window_gap          12
+bspc config window_gap          8
 
 bspc config split_ratio          0.50
 bspc config borderless_monocle   true
 bspc config gapless_monocle      true
 bspc config pointer_follows_focus true
 bspc config focus_follows_pointer true
+bspc config pointer_modifier mod4
+bspc config pointer_action1 move
+bspc config pointer_action2 resize_side
 
 bspc rule -a Gimp desktop='^8' state=floating follow=on
 bspc rule -a Chromium desktop='^2'
@@ -20,7 +23,8 @@ bspc rule -a mplayer2 state=floating
 bspc rule -a Yad state=floating
 bspc rule -a Kupfer.py focus=on
 bspc rule -a Screenkey manage=off
-
+bspc config bottom_padding 5
+bspc rule -a Blueberry state=floating
 
 # Border
 bspc config focused_border_color        "#520d57"
@@ -34,14 +38,14 @@ bspc config active_border_color         "#520d57"
 # Set display from arandr saved script
 sh ~/.screenlayout/monitor.sh &
 # Bar
-~/.config/polybar/launch.sh &
+sh ~/.config/polybar/Murz/launch.sh &
 # Notifications
 /usr/bin/dunst &
 # Polkit
 /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
 # Wallpaper
 #nitrogen --restore &
-feh --bg-fill /home/kshgrk/background/wall5.jpg
+feh --bg-fill /home/kshgrk/background/wall7.jpg
 # Dex
 dex -a -s /etc/xdg/autostart/:~/.config/autostart/  
 # Picom
