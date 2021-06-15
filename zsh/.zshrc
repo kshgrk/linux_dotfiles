@@ -2,8 +2,9 @@
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
-export PATH="$PATH:$HOME/flutter/bin"
-export JAVA_HOME="$HOME/Downloads/android-studio/jre"
+# export JAVA_HOME="$HOME/Downloads/android-studio/jre"
+export PATH="$PATH:/home/kshgrk/Desktop/flutter/bin"
+export CHROME_EXECUTABLE='/usr/bin/google-chrome-stable'
 
 # Set $PATH if ~/.local/bin exist
 if [ -d "$HOME/.local/bin" ]; then
@@ -176,6 +177,7 @@ alias ...='cd ../..'
 alias ....='cd ../../..'
 alias .....='cd ../../../..'
 alias ......='cd ../../../../..'
+alias cod='cd /run/media/kshgrk/Linux/Buffer/coding'
 alias c='clear'
 alias e='exit'
 alias h='htop'
