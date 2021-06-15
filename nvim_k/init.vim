@@ -131,6 +131,8 @@ call plug#begin('~/local/share/nvim/plugged')
 Plug 'codota/tabnine-vim'
 Plug 'jiangmiao/auto-pairs'
 Plug 'tpope/vim-commentary'
+Plug 'neovim/nvim-lspconfig'
+Plug 'nvim-lua/completion-nvim'
 call plug#end()
 
 "" gui configuration
