@@ -4,7 +4,7 @@ pgrep -x sxhkd > /dev/null || sxhkd &
 
 bspc monitor -d             7 8 9
 
-bspc config border_width        2
+bspc config border_width        0
 bspc config window_gap          8
 
 bspc config split_ratio          0.50
@@ -39,6 +39,8 @@ bspc config active_border_color         "#520d57"
 sh ~/.screenlayout/monitor.sh &
 # Bar
 sh ~/.config/polybar/Murz/launch.sh &
+#double_border
+sh ~/2bspwm.sh &
 # Notifications
 /usr/bin/dunst &
 # Polkit
@@ -61,7 +63,7 @@ brightnessctl set 15%
 xgamma -gamma 0.85
 
 #clipboard
-xfce4-clipman
+sh ~/.config/bspwm/scripts/clip.sh &
 
 #enable touchpad natural scrolling
 xinput --set-prop 16 "libinput Natural Scrolling Enabled" 1
@@ -74,3 +76,5 @@ xrandr --output eDP --set TearFree on
 
 #keys-settings
 xset r rate 230 30
+
+xfce4-clipman
