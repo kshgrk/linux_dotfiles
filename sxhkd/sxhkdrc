@@ -18,11 +18,24 @@ super + Left
 super + Down
 	tdrop -am -h 39% -w 99% -y 59% -n 3 alacritty
 
+alt + f
+    ~/.config/Scripts/confi.sh
+
+alt + g
+    ~/.config/Scripts/g_search.sh
+
+alt + y
+    ~/.config/Scripts/y_search.sh
+
 # program launcher
+
 super + d
-	rofi -modi drun -show drun -line-padding 4 \
-                -columns 2 -padding 50 -hide-scrollbar -terminal alacritty \
-                -show-icons -drun-icon-theme "Arc-X-D" -font "Droid Sans Regular 10"
+    rofi -theme ~/.config/rofi_k/config.rasi -show drun
+
+# super + d
+# 	rofi -modi drun -show drun -line-padding 4 \
+#                 -columns 2 -padding 50 -hide-scrollbar -terminal alacritty \
+#                 -show-icons -drun-icon-theme "Arc-X-D" -font "Droid Sans Regular 10"
 
 # show open window
 super + ctrl + d
@@ -38,7 +51,7 @@ super + shift + d
 
 # power-menu 
 super + shift + e
-     ~/.config/rofi/powermenu.sh
+     ~/.config/rofi_k/powermenu.sh
 
 # make sxhkd reload its configuration files:
 super + Escape
