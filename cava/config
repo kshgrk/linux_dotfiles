@@ -121,40 +121,49 @@
 # Gradient mode, only hex defined colors (and thereby ncurses mode) are supported,
 # background must also be defined in hex  or remain commented out. 1 = on, 0 = off.
 # You can define as many as 8 different colors. They range from bottom to top of screen
- gradient = 10
- gradient_count = 6 
+ gradient = 1
+ gradient_count = 7 
  gradient_color_1 = '#4840d6'
 
-; gradient_color_2 = '#6d40d6'
+ gradient_color_2 = '#6d40d6'
+ 
+ gradient_color_3 = '#8b40d6'
+# 
+ gradient_color_4 = '#a740d6'
+# 
+ gradient_color_5 = '#c240d6'
+# 
+ gradient_color_6 = '#d640ca' 
+# 
+ gradient_color_7 = '#d64086'
+# 
+ gradient_color_8 = '#d64040'
 
-; gradient_color_3 = '#8b40d6'
-
-; gradient_color_4 = '#a740d6'
-
-; gradient_color_5 = '#c240d6'
-
-; gradient_color_6 = '#d640ca' 
-
-; gradient_color_7 = '#d64086'
-
-; gradient_color_8 = '#d64040'
-
- gradient_color_1 = '#35c1d4'
-
- gradient_color_2 = '#3535d4'
-
- gradient_color_3 = '#8735d4'
-
- gradient_color_4 = '#c135d4'
-
- gradient_color_5 = '#d4358c'
-
- gradient_color_6 = '#d43535' 
+#  gradient_color_1 = '#35c1d4'
+# 
+#  gradient_color_2 = '#3535d4'
+# 
+#  gradient_color_3 = '#8735d4'
+# 
+#  gradient_color_4 = '#c135d4'
+# 
+#  gradient_color_5 = '#d4358c'
+# 
+#  gradient_color_6 = '#d43535' 
 
 ; gradient_color_7 = '#a17e2b'
 
 ; gradient_color_8 = '#82a12b'
-
+# gradient = 1
+# gradient_color_1 = '#8FBCBB'
+# gradient_color_2 = '#88C0D0'
+# gradient_color_3 = '#81A1C1'
+# gradient_color_4 = '#5E81AC'
+# gradient_color_5 = '#B48EAD'
+# gradient_color_6 = '#EBCB8B'
+# gradient_color_7 = '#D08770'
+# gradient_color_8 = '#BF616A'
+# 
 
 [smoothing]
 
