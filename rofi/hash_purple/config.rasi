@@ -1,9 +1,0 @@
-configuration {
-	show-icons: true;
-	terminal: "termite";
-	theme: "./hash-rofi.rasi";
-	display-window: "";
-	display-run: "Execute";
-	display-drun: "";
-	display-combi: "";
-}

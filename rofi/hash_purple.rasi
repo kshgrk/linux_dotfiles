@@ -8,7 +8,7 @@
  */
 
 configuration {
-    font:                           "Noto Sans 11";
+    font:                           "Fantasque Sans Mono 13";
     show-icons:                     true;
     display-drun:                   "";
     drun-display-format:            "{name}";
@@ -81,7 +81,7 @@ case-indicator {
 listview {
     background-color:               #00000000;
     columns:                        5;
-    spacing:                        4px;
+    spacing:                        15px;
     cycle:                          false;
     dynamic:                        true;
     layout:                         vertical;
@@ -90,7 +90,7 @@ listview {
 mainbox {
     background-color:               @background-color;
     children:                       [ inputbar, listview ];
-    spacing:                        15px;
+    spacing:                        30px;
     padding:                        30px 25px 15px 25px;
 }
 
@@ -103,7 +103,7 @@ element {
 }
 
 element-icon {
-    size:                           65px;
+    size:                           50px;
     border:                         0px;
 }
 

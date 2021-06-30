@@ -13,15 +13,15 @@
 # single     single_circle     single_full     single_full_circle     single_rounded     single_text
 
 style="power"
-rofi_command="rofi -theme $style.rasi"
+rofi_command="rofi -theme ~/.config/rofi_k/power.rasi"
 uptime=$(uptime -p)
 my_hostname=$(cat /etc/hostname)
 
 # Options
 shutdown=""
 reboot=""
-lock=""
-suspend=""
+lock=""
+suspend=" "
 logout=""
 
 # Variable passed to rofi
@@ -36,7 +36,7 @@ case $chosen in
         systemctl reboot
         ;;
     $lock)
-        betterlockscreen -l dim
+        /home/$USER/.config/bspwm/scripts/i3lock-fancy/i3lock-fancy.sh
         ;;
     $suspend)
         systemctl suspend

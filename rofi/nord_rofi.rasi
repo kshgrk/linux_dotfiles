@@ -8,18 +8,13 @@
 
 configuration {
 
-	font: "Hack 10";
-	width: 60;
-	line-margin: 3;
-	lines: 6;
-	columns: 2;
-
-    display-ssh:    "";
-    display-run:    "";
-    display-drun:   "";
-    display-window: "";
-    display-combi:  "";
-    show-icons:     true;
+  show-icons: true;
+  font: "Hack Medium 10";
+  drun-display-format: "{icon} {name}";
+  display-run: " ";
+  display-drun: " ";
+  display-window: " ";
+  modi: "window,run,drun";
 }
 
 * {
@@ -75,7 +70,7 @@ message {
     color: @nord0;
     padding: 5;
     border-color: @foreground;
-    border:  0px 2px 2px 2px;
+    border:  0px 0px 0px 0px;
     background-color: @nord7;
 }
 
@@ -84,8 +79,8 @@ inputbar {
     padding: 11px;
     background-color: #3b4252;
 
-    border: 1px;
-    border-radius:  6px 6px 0px 0px;
+    border: 0px;
+    border-radius:  0px 0px 0px 0px;
     border-color: @nord10;
 }
 
@@ -102,7 +97,7 @@ listview {
     padding: 8px;
     border-radius: 0px 0px 6px 6px;
     border-color: @nord10;
-    border: 0px 1px 1px 1px;
+    border: 0px 0px 0px 0px;
     background-color: rgba(46,52,64,0.9);
     dynamic: false;
 }
