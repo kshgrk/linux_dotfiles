@@ -69,3 +69,6 @@ require('lsp.vim-ls')
 require('lsp.vue-ls')
 require('lsp.yaml-ls')
 require('lsp.elixir-ls')
+
+
+vim.cmd('hi Normal guibg=NONE ctermbg=NONE')
