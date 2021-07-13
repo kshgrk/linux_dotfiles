@@ -7,6 +7,6 @@ Murz
 ![image](https://user-images.githubusercontent.com/75542933/125202851-36a84780-e293-11eb-82af-1afa5429c70c.png)
 
 
-Transparent
+Semi-Transparent
 
 ![image](https://user-images.githubusercontent.com/75542933/125202875-50498f00-e293-11eb-8b92-13b7dfe9cc34.png)
