@@ -349,7 +349,7 @@ shell:
 #alt_send_esc: true
 
 mouse:
-  # Click settings
+  #  Click settings
   #
   # The `double_click` and `triple_click` settings control the time
   # alacritty should wait for accepting multiple clicks as one double
