@@ -8,7 +8,6 @@ set -x MANPAGER "sh -c 'col -bx | bat -l man -p'"
 set -U __done_min_cmd_duration 10000
 set -U __done_notification_urgency_level low
 
-
 ## Environment setup
 # Apply .profile
 # source ~/.profile
