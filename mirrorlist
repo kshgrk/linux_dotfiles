@@ -740,3 +740,4 @@ Server = https://zxcvfdsa.com/arch/$repo/os/$arch
 Server = http://f.archlinuxvn.org/archlinux/$repo/os/$arch
 Server = http://mirror.bizflycloud.vn/archlinux/$repo/os/$arch
 
+
