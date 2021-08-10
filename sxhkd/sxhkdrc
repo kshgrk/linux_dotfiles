@@ -18,6 +18,9 @@ super + Left
 super + Down
 	tdrop -am -h 39% -w 99% -y 59% -n 3 alacritty
 
+super + e
+	emacs
+
 alt + f
     ~/.config/Scripts/confi.sh
 
@@ -25,12 +28,14 @@ alt + g
     ~/.config/Scripts/g_search.sh
 
 alt + y
-    ~/.config/Scripts/y_search.sh
+    ~/.config/Scripts/y_search.sh  
 
+alt + c
+    ~/.config/Scripts/gclip
 # program launcher
 
 super + d
-    rofi -theme ~/.config/rofi_k/config.rasi -show drun
+    rofi -theme ~/.config/rofi_k/hash_purple.rasi -show drun
 
 # super + d
 # 	rofi -modi drun -show drun -line-padding 4 \
@@ -51,7 +56,7 @@ super + shift + d
 
 # power-menu 
 super + shift + e
-     ~/.config/rofi_k/powermenu.sh
+     ~/.config/rofi_k/hash_powermenu.sh
 
 # make sxhkd reload its configuration files:
 super + Escape
