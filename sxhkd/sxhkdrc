@@ -21,6 +21,9 @@ super + Down
 super + e
 	emacs
 
+alt + p
+    ~/.config/Scripts/pulseeffects.sh
+
 alt + f
     ~/.config/Scripts/confi.sh
 
