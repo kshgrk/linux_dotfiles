@@ -4,8 +4,8 @@
 #
 
 outer='0x000000'   # outer
-inner1='0x8c0e75'  # focused
-inner2='0x8c0e75'  # normal
+inner1='0x775522' # focused
+inner2='0x775522'  # normal
 
 trap 'bspc config border_width 0; kill -9 -$$' INT TERM
 
