@@ -1,5 +1,8 @@
 ## FIRST LINE/ROW: Info & Status
 # First param ─┌
+
+add_newline = false
+
 [username]
 format = " [$user]($style) -> "
 style_user = "bold cyan"
