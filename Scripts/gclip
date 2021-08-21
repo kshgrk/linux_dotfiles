@@ -1,0 +1,3 @@
+#!/bin/sh
+
+    rofi -theme ~/.config/rofi_k/list_purple.rasi  -lines 14 -columns 1 -modi "clipboard:greenclip print" -show clipboard -run-command '{cmd}'
