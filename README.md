@@ -2,7 +2,13 @@ my linux dotfiles.....!!
 
 current setup
 
-![image](https://user-images.githubusercontent.com/75542933/117363570-61b09c80-aeda-11eb-915b-59fb6deabc65.png)
+There are two themes ```1. Retro-Magenta``` and ```2.Gruvbox```
 
-![image](https://user-images.githubusercontent.com/75542933/117562004-418b0400-b0b9-11eb-8399-c76cf9c92d45.png)
+1. Retro-Magenta
+![image](https://user-images.githubusercontent.com/75542933/131223761-583c97b9-fec7-45e8-8f57-146dd58f9a66.png)
+
+2. Gruvbox
+![image](https://user-images.githubusercontent.com/75542933/131223794-703f9865-7f52-4df7-b048-584b2575790d.png)
+
+
 
