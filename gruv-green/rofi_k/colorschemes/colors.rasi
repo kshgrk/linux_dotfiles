@@ -1,0 +1,26 @@
+/* * { */
+/* // General */
+  /* background:                   #140e06CC; */
+  /* background-alt:               #3c2b11FF; */
+  /* foreground:                   #efdcc39E; */
+  /* foreground-alt:        		#efdcc3FF; */
+  /* border:               	    @background-alt; */
+  /* border-alt: 					#140e05FF; */
+  /* urgent:                       #DA4453FF; */
+  /* urgent-alt:              		#C71619FF; */
+/*  */
+/* } */
+
+* {
+// General
+  background:                   #1D1F1BCC;
+  background-alt:               #567433CC;
+  foreground:                   #efdcc39E;
+  foreground-alt:        		#efdcc3FF;
+  border:               	    @background-alt;
+  border-alt: 					#140e05FF;
+  urgent:                       #DA4453FF;
+  urgent-alt:              		#C71619FF;
+
+}
+
