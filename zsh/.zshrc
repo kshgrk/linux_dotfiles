@@ -2,15 +2,23 @@
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
-# export JAVA_HOME="$HOME/Downloads/android-studio/jre"
-export PATH="$PATH:/home/kshgrk/Desktop/flutter/bin"
-export CHROME_EXECUTABLE='/usr/bin/google-chrome-stable'
+export JAVA_HOME="$HOME/Desktop/android-studio/jre/"
+
+export PATH=$JAVA_HOME/bin:$PATH 
+export PATH="$PATH:/home/kshgrk/Documents/flutter/bin"
+export PATH="$PATH:/home/kshgrk/Documents/flutter/bin/cache/dart-sdk"
+#export CHROME_EXECUTABLE='/usr/bin/google-chrome-stable'
+#export PATH="$HOME/.emacs.d/bin:$PATH"
+# export ANDROID_SDK= '$HOME/Android/Sdk'
+# export PATH=$PATH:$ANDROID_SDK/tools/bin/
+# export PATH=$PATH:$ANDROID/emulator
+# export PATH=$PATH:$ANDROID_SDK/tools/
 
 # Set $PATH if ~/.local/bin exist
 if [ -d "$HOME/.local/bin" ]; then
     export PATH=$HOME/.local/bin:$PATH
 fi
-
+# PS1='%F{green}%f%F{blue}%1~%f%F{green}%f$vcs_info_msg_0_ %F{magenta} %f '
 eval "$(starship init zsh)"
 function set_win_title(){
     echo -ne "\033]0; $USER@$HOST:${PWD/$HOME/~} \007"
@@ -20,6 +28,7 @@ precmd_functions+=(set_win_title)
 ## Plugins section: Enable fish style features
 # Use syntax highlighting
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+# source /usr/share/zsh/plugins/zsh-autocomplete/zsh-autocomplete.plugin.zsh
 
 # Use autosuggestion
 source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
@@ -30,7 +39,17 @@ source /usr/share/zsh/plugins/zsh-history-substring-search/zsh-history-substring
 # Use fzf
 source /usr/share/fzf/key-bindings.zsh
 source /usr/share/fzf/completion.zsh
-
+source ~/local/fzf-tab.plugin.zsh
+# disable sort when completing `git checkout`
+zstyle ':completion:*:git-checkout:*' sort false
+# set descriptions format to enable group support
+zstyle ':completion:*:descriptions' format '[%d]'
+# set list-colors to enable filename colorizing
+zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
+# preview directory's content with exa when completing cd
+zstyle ':fzf-tab:complete:cd:*' fzf-preview 'exa -1 --color=always $realpath'
+# switch group using `,` and `.`
+zstyle ':fzf-tab:*' switch-group ',' '.'
 # Arch Linux command-not-found support, you must have package pkgfile installed
 # https://wiki.archlinux.org/index.php/Pkgfile#.22Command_not_found.22_hook
 [[ -e /usr/share/doc/pkgfile/command-not-found.zsh ]] && source /usr/share/doc/pkgfile/command-not-found.zsh
@@ -40,7 +59,7 @@ source ~/.profile
 
 
 ## Options section
-setopt correct                                                  # Auto correct mistakes
+unsetopt correct                                                  # Auto correct mistakes
 setopt extendedglob                                             # Extended globbing. Allows using regular expressions with *
 setopt nocaseglob                                               # Case insensitive globbing
 setopt rcexpandparam                                            # Array expension with parameters
@@ -58,13 +77,14 @@ setopt pushdminus
 autoload -Uz compinit
 compinit
 zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}'       # Case insensitive tab completion
-zstyle ':completion:*' rehash true                              # automatically find new executables in path 
+zstyle ':completion:*' rehash true                              # automatically find new executables in path
 zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"         # Colored completion (different colors for dirs/files/etc)
 zstyle ':completion:*' completer _expand _complete _ignored _approximate
 zstyle ':completion:*' menu select=2
 zstyle ':completion:*' select-prompt '%SScrolling active: current selection at %p%s'
 zstyle ':completion:*:descriptions' format '%U%F{cyan}%d%f%u'
-
+#
+# zstyle ':completion:*:descriptions' format '%U[%d]%u'
 # Speed up completions
 zstyle ':completion:*' accept-exact '*(N)'
 zstyle ':completion:*' use-cache on
@@ -169,7 +189,7 @@ alias ld='(exa -l --color=always --group-directories-first) | bat'  # long forma
 
 # Common use aliases
 alias aup="pamac upgrade --aur"
-alias grubup="sudo update-grub"
+alias grubup="sudo grub-mkconfig -o /boot/grub/grub.cfg"
 alias fixpacman="sudo rm /var/lib/pacman/db.lck"
 alias tarnow='tar -acf '
 alias untar='tar -zxvf '
@@ -181,14 +201,15 @@ alias ...='cd ../..'
 alias ....='cd ../../..'
 alias .....='cd ../../../..'
 alias ......='cd ../../../../..'
-alias cod='cd /run/media/kshgrk/Linux/Buffer/coding'
+alias cod='cd ~/Media/Linux/Buffer/coding && clear'
 alias c='clear'
 alias e='exit'
 alias h='htop'
 alias n='neofetch | lolcat'
 alias s='sensors'
 alias b='bpytop'
-alias spr='curl -F '\''sprunge=<-'\''http://sprunge.us'
+alias t='tmux new-session \; send-keys 'cod' C-m \; splitw -hp 30 \; send-keys 'cod' C-m'
+# alias spr="command curl -fsLF 'sprunge=<-' http://sprunge.us"
 alias p='sudo powertop'
 alias cc='sudo sh -c "echo 1 > /proc/sys/vm/drop_caches"'
 alias bb='sudo sh -c "echo 2 > /proc/sys/vm/drop_caches"'
@@ -198,7 +219,6 @@ alias gc='git commit'
 alias ga='git add .'
 alias gps='git push'
 alias gpl='git pull'
-alias ani='cd ani-cli && ./ani-cli'
 alias dir='dir --color=auto'
 alias vdir='vdir --color=auto'
 alias grep='grep --color=auto'
@@ -207,6 +227,24 @@ alias egrep='egrep --color=auto'
 alias hw='hwinfo --short'                                   # Hardware Info
 alias big="expac -H M '%m\t%n' | sort -h | nl"              # Sort installed packages
 alias gitpkg='pacman -Q | grep -i "\-git" | wc -l'			# List amount of -git packages
+alias nv='nvim' 
+
+spr (){
+    cat "$@" \
+    | command curl -fsLF 'sprunge=<-' http://sprunge.us/ \
+    | tr -d "\n" \
+    | xclip -in -sel clip && \
+    notify-send -t 900 -u low "Sprunge copied to clipboard!"
+
+}
+# nv () {
+    # alacritty-conf -p 0;
+    # nvim $@ && alacritty-conf -p 10
+# }
+
+iso (){
+  sudo dd bs=4M if=$1 of=/dev/$2 status=progress && sync
+}
 
 # Get fastest mirrors 
 alias mirror="sudo reflector -f 30 -l 30 --number 10 --verbose" 
@@ -220,6 +258,25 @@ alias mirrora="sudo reflector --latest 50 --number 20 --sort age"
 # Set your countries like --country France --country Germany -- or more.
 alias upd='sudo reflector --latest 5 --age 2 --fastest 5 --protocol https --sort rate --save /etc/pacman.d/mirrorlist && cat /etc/pacman.d/mirrorlist && sudo pacman -Syu && sudo updatedb'
 
-alias cleanup='sudo yay -Rns $(yay -Qtdq)'
+alias cleanup='yay -Rns $(yay -Qtdq)'
 ## Run paleofetch
 #paleofetch
+
+# Then load url-quote-magic and bracketed-paste-magic as above
+autoload -U url-quote-magic bracketed-paste-magic
+zle -N self-insert url-quote-magic
+zle -N bracketed-paste bracketed-paste-magic
+
+# Now the fix, setup these two hooks:
+pasteinit() {
+  OLD_SELF_INSERT=${${(s.:.)widgets[self-insert]}[2,3]}
+  zle -N self-insert url-quote-magic 
+}
+pastefinish() {
+  zle -N self-insert $OLD_SELF_INSERT
+}
+zstyle :bracketed-paste-magic paste-init pasteinit
+zstyle :bracketed-paste-magic paste-finish pastefinish
+
+# and finally, make sure zsh-autosuggestions does not interfere with it:
+ZSH_AUTOSUGGEST_CLEAR_WIDGETS+=(bracketed-paste)
