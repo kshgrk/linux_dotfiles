@@ -10,7 +10,7 @@ super + Up
 	tdrop -am -w 99% -y 0 -n 3 alacritty
 
 super + Right
-	tdrop -am -h 90% -w 39% -y 5% -x 60% -n 1 alacritty
+	tdrop -am -h 90% -w 49% -y 5% -x 50% -n 1 alacritty
 
 super + Left
 	tdrop -am -h 90% -w 40% -y 5% -n 2 alacritty
@@ -202,7 +202,7 @@ Print
   scrot ~/Pictures/Screenshot-$(date +%F_%T).png
 
 super+Print
-  ~/.config/bspwm/scripts/screenshot.sh
+  ~/.config/Scripts/screenshot.sh
 
 # Shortcuts
 super + w 
