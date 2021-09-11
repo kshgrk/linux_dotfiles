@@ -13,5 +13,10 @@ There are two themes ```1. Retro-Magenta``` and ```2.Gruvbox```
 2. Gruvbox
 ![image](https://user-images.githubusercontent.com/75542933/131223794-703f9865-7f52-4df7-b048-584b2575790d.png)
 
+3. Gruv-green
+![image](https://user-images.githubusercontent.com/75542933/132940361-33f75aed-4eee-4e2c-83fe-ed3dfecf3845.png)
+
+
+
 
 
