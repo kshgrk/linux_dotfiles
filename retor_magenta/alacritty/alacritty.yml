@@ -49,7 +49,7 @@ window:
   # Values for `decorations` (macOS only):
   #     - transparent: Title bar, transparent background and title bar buttons
   #     - buttonless: Title bar, transparent background, but no title bar buttons
-  decorations: full
+  decorations: none
 
   # Startup Mode (changes require restart)
   #
@@ -89,7 +89,7 @@ scrolling:
 # Font configuration
 font:
   # Normal (roman) font face
-  size: 10 
+  size: 9.5 
   normal:
     # Font family
     #
@@ -136,7 +136,7 @@ font:
     #style: Bold Italic
 
   # Point size
-    size: 11.0
+    size: 10.0
 
   # Offset is the extra space around each character. `offset.y` can be thought of
   # as modifying the line spacing, and `offset.x` as modifying the letter spacing.
@@ -276,7 +276,7 @@ draw_bold_text_with_bright_colors: true
 #
 # Window opacity as a floating point number from `0.0` to `1.0`.
 # The value `0.0` is completely transparent and `1.0` is opaque.
-background_opacity: 0.60 
+background_opacity: 0.70 
 
 #selection:
   #semantic_escape_chars: ",│`|:\"' ()[]{}<>\t"
@@ -294,7 +294,7 @@ cursor:
   #   - ▇ Block
   #   - _ Underline
   #   - | Beam
-  style: Block
+  style: Underline
 
   # Vi mode cursor style
   #
@@ -349,7 +349,7 @@ shell:
 #alt_send_esc: true
 
 mouse:
-  #  Click settings
+  # Click settings
   #
   # The `double_click` and `triple_click` settings control the time
   # alacritty should wait for accepting multiple clicks as one double
@@ -550,7 +550,7 @@ key_bindings:
   - { key: Equals,   mods: Control,       action: IncreaseFontSize }
   - { key: Plus,     mods: Control,       action: IncreaseFontSize }
   - { key: Minus,    mods: Control,       action: DecreaseFontSize }
-  - { key: N,        mods: Control,       action: SpawnNewInstance }
+  # - { key: N,        mods: Control,       action: SpawnNewInstance }
   - { key: M,        mods: Control,       action: Minimize         }
 
 
@@ -603,7 +603,7 @@ key_bindings:
     #white:      '0xeec49a'
 
 # Colors (Gruvbox dark)
-colors:
+# colors:
 #  primary:
 #    # hard contrast background - '#1d2021'
 #    background:        &gruvbox_dark_bg '#0a1124'
@@ -662,9 +662,9 @@ colors:
 #    white:   '#928374'
   # indexed_colors: []
 
-   primary:
-        background: '0x000000'
-        foreground: '0x09b1d6'
+   # primary:
+        # background: '0x000000'
+        # foreground: '0x09b1d6'
 
       # Colors that should be used to draw the terminal cursor. If these are unset,
       # the cursor colour will be the inverse of the cell colour.
@@ -674,37 +674,37 @@ colors:
       #   cursor: '0xffffff'
 
       # Normal colors
-   normal:
-        black:   '0x123e7c'
-        red:     '0xff0000'
-        green:   '0xd300c4'
-        yellow:  '0xf57800'
-        blue:    '0x123e7c'
-        magenta: '0x9b1fc4'
-        cyan:    '0x0abdc6'
-        white:   '0xd7d7d5'
+   # normal:
+        # black:   '0x123e7c'
+        # red:     '0xff0000'
+        # green:   '0xd300c4'
+        # yellow:  '0xf57800'
+        # blue:    '0x123e7c'
+        # magenta: '0x9b1fc4'
+        # cyan:    '0x0abdc6'
+        # white:   '0xd7d7d5'
 
       # Bright colors
-   bright:
-        black:   '0x1c61c2'
-        red:     '0xff0000'
-        green:   '0xd300c4'
-        yellow:  '0xf57800'
-        blue:    '0x00ff00'
-        magenta: '0x9b1fc4'
-        cyan:    '0x0abdc6'
-        white:   '0xd7d7d5'
+   # bright:
+        # black:   '0x1c61c2'
+        # red:     '0xff0000'
+        # green:   '0xd300c4'
+        # yellow:  '0xf57800'
+        # blue:    '0x00ff00'
+        # magenta: '0x9b1fc4'
+        # cyan:    '0x0abdc6'
+        # white:   '0xd7d7d5'
 
       # dim colors
-   dim:
-        black:   '0x1c61c2'
-        red:     '0xff0000'
-        green:   '0xd300c4'
-        yellow:  '0xf57800'
-        blue:    '0x123e7c'
-        magenta: '0x9b1fc4'
-        cyan:    '0x0abdc6'
-        white:   '0xd7d7d5'
+   # dim:
+        # black:   '0x1c61c2'
+        # red:     '0xff0000'
+        # green:   '0xd300c4'
+        # yellow:  '0xf57800'
+        # blue:    '0x123e7c'
+        # magenta: '0x9b1fc4'
+        # cyan:    '0x0abdc6'
+        # white:   '0xd7d7d5'
 
 #    primary:
 #      background: '0x000b1e'
@@ -734,31 +734,31 @@ colors:
 #
 #    tokyo-night-storm: &tokyo-night-storm
 #    # Default colors
-#    primary:
-#      background: '0x000b1e'
-#      foreground: '0xa9b1d6'
-#
-#    # Normal colors
-#    normal:
-#      black:   '0x32344a'
-#      red:     '0xf7768e'
-#      green:   '0x9ece6a'
-#      yellow:  '0xe0af68'
-#      blue:    '0x7aa2f7'
-#      magenta: '0xad8ee6'
-#      cyan:    '0x449dab'
-#      white:   '0x9699a8'
-#
-#    # Bright colors
-#    bright:
-#      black:   '0x444b6a'
-#      red:     '0xff7a93'
-#      green:   '0xb9f27c'
-#      yellow:  '0xff9e64'
-#      blue:    '0x7da6ff'
-#      magenta: '0xbb9af7'
-#      cyan:    '0x0db9d7'
-#      white:   '0xacb0d0'
+   # primary:
+     # background: '0x000000'
+     # foreground: '0xa9b1d6'
+
+   # Normal colors
+   # normal:
+     # black:   '0x32344a'
+     # red:     '0xf7768e'
+     # green:   '0x9ece6a'
+     # yellow:  '0xe0af68'
+     # blue:    '0x7aa2f7'
+     # magenta: '0xad8ee6'
+     # cyan:    '0x449dab'
+     # white:   '0x9699a8'
+
+   # Bright colors
+   # bright:
+     # black:   '0x444b6a'
+     # red:     '0xff7a93'
+     # green:   '0xb9f27c'
+     # yellow:  '0xff9e64'
+     # blue:    '0x7da6ff'
+     # magenta: '0xbb9af7'
+     # cyan:    '0x0db9d7'
+     # white:   '0xacb0d0'
   # primary:
   #   background: '#2e3440'
   #   foreground: '#d8dee9'
@@ -806,3 +806,90 @@ colors:
   #   magenta: '#8c738c'
   #   cyan: '#6d96a5'
   #   white: '#aeb3bb'
+
+colors:
+#   primary:
+#     background: '0x000000'
+#     foreground: '0xdfbf8e'
+# 
+#   normal:
+#     black:   '0x665c54'
+#     red:     '0xea6962'
+#     green:   '0xa9b665'
+#     yellow:  '0xe78a4e'
+#     blue:    '0x7daea3'
+#     magenta: '0xd3869b'
+#     cyan:    '0x89b482'
+#     white:   '0xdfbf8e'
+# 
+#   bright:
+#     black:   '0x928374'
+#     red:     '0xea6962'
+#     green:   '0xa9b665'
+#     yellow:  '0xe3a84e'
+#     blue:    '0x7daea3'
+#     magenta: '0xd3869b'
+#     cyan:    '0x89b482'
+#     white:   '0xdfbf8e'
+
+  primary:
+    background: '0x000000'
+    foreground: '0xabb2bf'
+
+
+  normal:
+    black:   '0x1e2127'
+    red:     '0xe06c75'
+    green:   '0x98c379'
+    yellow:  '0xd19a66'
+    blue:    '0x61afef'
+    magenta: '0xc678dd'
+    cyan:    '0x56b6c2'
+    white:   '0x828791'
+
+  # Bright colors
+  bright:
+    black:   '0x5c6370'
+    red:     '0xe06c75'
+    green:   '0x98c379'
+    yellow:  '0xd19a66'
+    blue:    '0x61afef'
+    magenta: '0xc678dd'
+    cyan:    '0x56b6c2'
+    white:   '0xe6efff'
+
+  # Dim colors
+  #
+  # If the dim colors are not set, they will be calculated automatically based
+  # on the `normal` colors.
+  # dim:
+    # black:   '0x1e2127'
+    # red:     '0xe06c75'
+    # green:   '0x98c379'
+    # yellow:  '0xd19a66'
+    # blue:    '0x61afef'
+    # magenta: '0xc678dd'
+    # cyan:    '0x56b6c2'
+    # white:   '0x828791'
+
+  # primary:
+    # background: "#000000"
+    # foreground: "#dadfe8"
+  # normal:
+    # black: "#000000"
+    # red: "#ff5555"
+    # green: "#50fa7b"
+    # yellow: "#f1fa8c"
+    # blue: "#4d46cf"
+    # magenta: "#c74abc"
+    # cyan: "#8be9fd"
+    # white: "#bfbfbf"
+  # bright:
+    # black: "#575b70"
+    # red: "#ff6e67"
+    # green: "#5af78e"
+    # yellow: "#f4f99d"
+    # magenta: "#ff92d0"
+    # blue: "#a466ff"
+    # cyan: "#9aedfe"
+    # white: "#e6e6e6"

@@ -808,7 +808,7 @@ colors:
   #   white: '#aeb3bb'
 
 # colors:
-  primary:
+ primary:
     background: '0x000000'
     foreground: '0xdfbf8e'
 
