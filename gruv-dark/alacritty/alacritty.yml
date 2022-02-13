@@ -1,0 +1,1009 @@
+# Configuration for Alacritty, the GPU enhanced terminal emulator.
+
+# Any items in the `env` entry below will be added as
+# environment variables. Some entries may override variables
+# set by alacritty itself.
+env:
+  # TERM variable
+  #
+  # This value is used to set the `$TERM` environment variable for
+  # each instance of Alacritty. If it is not present, alacritty will
+  # check the local terminfo database and use `alacritty` if it is
+  # available, otherwise `xterm-256color` is used.
+  TERM: alacritty
+
+window:
+  # Window dimensions (changes require restart)
+  #
+  # Specified in number of columns/lines, not pixels.
+  # If both are `0`, this setting is ignored.
+  dimensions:
+    columns: 170
+    lines: 45
+  opacity: 1
+
+  # Window position (changes require restart)
+  #
+  # Specified in number of pixels.
+  # If the position is not set, the window manager will handle the placement.
+  position:
+    x: 100
+    y: 100
+#
+  # Window padding (changes require restart)
+  #
+  # Blank space added around the window in pixels. This padding is scaled
+  # by DPI and the specified value is always added at both opposing sides.
+  padding:
+    x: 10
+    y: 10
+
+  # Spread additional padding evenly around the terminal content.
+  dynamic_padding: true
+
+  # Window decorations
+  #
+  # Values for `decorations`:
+  #     - full: Borders and title bar
+  #     - none: Neither borders nor title bar
+  #
+  # Values for `decorations` (macOS only):
+  #     - transparent: Title bar, transparent background and title bar buttons
+  #     - buttonless: Title bar, transparent background, but no title bar buttons
+  decorations: none
+
+  # Startup Mode (changes require restart)
+  #
+  # Values for `startup_mode`:
+  #   - Windowed
+  #   - Maximized
+  #   - Fullscreen
+  #
+  # Values for `startup_mode` (macOS only):
+  #   - SimpleFullscreen
+  #startup_mode: Windowed
+
+  # Window title
+  title: Alacritty
+
+  # Window class (Linux/BSD only):
+  class:
+    # Application instance name
+    instance: Alacritty
+    # General application class
+    general: Alacritty
+
+  # GTK theme variant (Linux/BSD only)
+  #
+  # Override the variant of the GTK theme. Commonly supported values are `dark` and `light`.
+  # Set this to `None` to use the default theme variant.
+  gtk_theme_variant: dark
+
+scrolling:
+  # Maximum number of lines in the scrollback buffer.
+  # Specifying '0' will disable scrolling.
+  history: 10000
+
+  # Scrolling distance multiplier.
+  multiplier: 3
+
+# Font configuration
+font:
+  # Normal (roman) font face
+  size: 9.5
+  normal:
+    # Font family
+    #
+    # Default:
+    #   - (macOS) Menlo
+    #   - (Linux/BSD) monospace
+    #   - (Windows) Consolas
+    family: fantasque sans mono
+
+    # The `style` can be specified to pick a specific face.
+    #style: Regular
+
+  # Bold font face
+  bold:
+    # Font family
+    #
+    # If the bold family is not specified, it will fall back to the
+    # value specified for the normal font.
+    family: fantasque sans mono
+
+    # The `style` can be specified to pick a specific face.
+    #style: Bold
+
+  # Italic font face
+  italic:
+    # Font family
+    #
+    # If the italic family is not specified, it will fall back to the
+    # value specified for the normal font.
+    family:  fantasque sans mono
+
+    # The `style` can be specified to pick a specific face.
+    #style: Italic
+
+  # Bold italic font face
+  bold_italic:
+    # Font family
+    #
+    # If the bold italic family is not specified, it will fall back to the
+    # value specified for the normal font.
+    family:  fantasque sans mono
+
+    # The `style` can be specified to pick a specific face.
+    #style: Bold Italic
+
+  # Point size
+    size: 10.0
+
+  # Offset is the extra space around each character. `offset.y` can be thought of
+  # as modifying the line spacing, and `offset.x` as modifying the letter spacing.
+  #offset:
+  #  x: 0
+  #  y: 0
+
+  # Glyph offset determines the locations of the glyphs within their cells with
+  # the default being at the bottom. Increasing `x` moves the glyph to the right,
+  # increasing `y` moves the glyph upwards.
+  #glyph_offset:
+  #  x: 0
+  #  y: 0
+
+  # Thin stroke font rendering (macOS only)
+  #
+  # Thin strokes are suitable for retina displays, but for non-retina screens
+  # it is recommended to set `use_thin_strokes` to `false`.
+  #use_thin_strokes: true
+
+# If `true`, bold text is drawn using the bright color variants.
+draw_bold_text_with_bright_colors: true
+
+# Colors (Tomorrow Night)
+#colors:
+  # Default colors
+  #primary:
+  #  background: '#1d1f21'
+  #  foreground: '#c5c8c6'
+
+    # Bright and dim foreground colors
+    #
+    # The dimmed foreground color is calculated automatically if it is not present.
+    # If the bright foreground color is not set, or `draw_bold_text_with_bright_colors`
+    # is `false`, the normal foreground color will be used.
+    #dim_foreground: '#828482'
+    #bright_foreground: '#eaeaea'
+
+  # Cursor colors
+  #
+  # Colors which should be used to draw the terminal cursor. If these are
+  # unset, the cursor color will be the inverse of the cell color.
+  #cursor:
+  #  text: '#000000'
+  #  cursor: '#ffffff'
+
+  # Vi mode cursor colors
+  #
+  # Colors for the cursor when the vi mode is active. If these are unset, the
+  # cursor color will be the inverse of the cell color.
+  #vi_mode_cursor:
+  #  text: '#000000'
+  #  cursor: '#ffffff'
+
+  # Selection colors
+  #
+  # Colors which should be used to draw the selection area. If selection
+  # background is unset, selection color will be the inverse of the cell colors.
+  # If only text is unset the cell text color will remain the same.
+  #selection:
+  #  text: '#eaeaea'
+  #  background: '#404040'
+
+  # Normal colors
+  #normal:
+  #  black:   '#1d1f21'
+  #  red:     '#cc6666'
+  #  green:   '#b5bd68'
+  #  yellow:  '#f0c674'
+  #  blue:    '#81a2be'
+  #  magenta: '#b294bb'
+  #  cyan:    '#8abeb7'
+  #  white:   '#c5c8c6'
+
+  # Bright colors
+  #bright:
+  #  black:   '#666666'
+  #  red:     '#d54e53'
+  #  green:   '#b9ca4a'
+  #  yellow:  '#e7c547'
+  #  blue:    '#7aa6da'
+  #  magenta: '#c397d8'
+  #  cyan:    '#70c0b1'
+  #  white:   '#eaeaea'
+
+  # Dim colors
+  #
+  # If the dim colors are not set, they will be calculated automatically based
+  # on the `normal` colors.
+  #dim:
+  #  black:   '#131415'
+  #  red:     '#864343'
+  #  green:   '#777c44'
+  #  yellow:  '#9e824c'
+  #  blue:    '#556a7d'
+  #  magenta: '#75617b'
+  #  cyan:    '#5b7d78'
+  #  white:   '#828482'
+
+  # Indexed Colors
+  #
+  # The indexed colors include all colors from 16 to 256.
+  # When these are not set, they're filled with sensible defaults.
+  #
+  # Example:
+  #   `- { index: 16, color: '#ff00ff' }`
+  #
+  #indexed_colors: []
+
+# Visual Bell
+#
+# Any time the BEL code is received, Alacritty "rings" the visual bell. Once
+# rung, the terminal background will be set to white and transition back to the
+# default background color. You can control the rate of this transition by
+# setting the `duration` property (represented in milliseconds). You can also
+# configure the transition function by setting the `animation` property.
+#
+# Values for `animation`:
+#   - Ease
+#   - EaseOut
+#   - EaseOutSine
+#   - EaseOutQuad
+#   - EaseOutCubic
+#   - EaseOutQuart
+#   - EaseOutQuint
+#   - EaseOutExpo
+#   - EaseOutCirc
+#   - Linear
+#
+# Specifying a `duration` of `0` will disable the visual bell.
+#visual_bell:
+#  animation: EaseOutExpo
+#  duration: 0
+#  color: '#ffffff'
+
+# Background opacity
+#
+# Window opacity as a floating point number from `0.0` to `1.0`.
+# The value `0.0` is completely transparent and `1.0` is opaque.
+#background_opacity: 0.80
+
+#selection:
+  #semantic_escape_chars: ",│`|:\"' ()[]{}<>\t"
+selection:
+  save_to_clipboard: true
+  # When set to `true`, selected text will be copied to the primary clipboard.
+save_to_clipboard: true
+
+# Allow terminal applications to change Alacritty's window title.
+window.dynamic_title: true
+# window.opacity: 0.7
+
+cursor:
+  # Cursor style
+  #
+  # Values for `style`:
+  #   - ▇ Block
+  #   - _ Underline
+  #   - | Beam
+  style: Underline
+
+  # Vi mode cursor style
+  #
+  # If the vi mode cursor style is `None` or not specified, it will fall back to
+  # the style of the active value of the normal cursor.
+  #
+  # See `cursor.style` for available options.
+  #vi_mode_style: None
+
+  # If this is `true`, the cursor will be rendered as a hollow box when the
+  # window is not focused.
+  #unfocused_hollow: true
+
+  # Thickness of the cursor relative to the cell width as floating point number
+  # from `0.0` to `1.0`.
+  #thickness: 0.15
+
+# Live config reload (changes require restart)
+live_config_reload: true
+
+# Shell
+#
+# You can set `shell.program` to the path of your favorite shell, e.g. `/bin/fish`.
+# Entries in `shell.args` are passed unmodified as arguments to the shell.
+#
+# Default:
+#   - (macOS) /bin/bash --login
+#   - (Linux/BSD) user login shell
+#   - (Windows) powershell
+shell:
+  program: /usr/bin/zsh
+  args:
+    - --login
+
+# Startup directory
+#
+# Directory the shell is started in. If this is unset, or `None`, the working
+# directory of the parent process will be used.
+#working_directory: None
+
+# WinPTY backend (Windows only)
+#
+# Alacritty defaults to using the newer ConPTY backend if it is available,
+# since it resolves a lot of bugs and is quite a bit faster. If it is not
+# available, the the WinPTY backend will be used instead.
+#
+# Setting this option to `true` makes Alacritty use the legacy WinPTY backend,
+# even if the ConPTY backend is available.
+#winpty_backend: false
+
+# Send ESC (\x1b) before characters when alt is pressed.
+#alt_send_esc: true
+
+mouse:
+  # Click settings
+  #
+  # The `double_click` and `triple_click` settings control the time
+  # alacritty should wait for accepting multiple clicks as one double
+  # or triple click.
+  #double_click: { threshold: 300 }
+  #triple_click: { threshold: 300 }
+
+  # If this is `true`, the cursor is temporarily hidden when typing.
+  hide_when_typing: true
+
+  #url:
+    # URL launcher
+    #
+    # This program is executed when clicking on a text which is recognized as a URL.
+    # The URL is always added to the command as the last parameter.
+    #
+    # When set to `launcher: None`, URL launching will be disabled completely.
+    #
+    # Default:
+    #   - (macOS) open
+    #   - (Linux/BSD) xdg-open
+    #   - (Windows) explorer
+    #launcher:
+    #  program: xdg-open
+    #  args: []
+
+    # URL modifiers
+    #
+    # These are the modifiers that need to be held down for opening URLs when clicking
+    # on them. The available modifiers are documented in the key binding section.
+    #modifiers: None
+
+# Mouse bindings
+#
+# Mouse bindings are specified as a list of objects, much like the key
+# bindings further below.
+#
+# To trigger mouse bindings when an application running within Alacritty captures the mouse, the
+# `Shift` modifier is automatically added as a requirement.
+#
+# Each mouse binding will specify a:
+#
+# - `mouse`:
+#
+#   - Middle
+#   - Left
+#   - Right
+#   - Numeric identifier such as `5`
+#
+# - `action` (see key bindings)
+#
+# And optionally:
+#
+# - `mods` (see key bindings)
+#mouse_bindings:
+#  - { mouse: Middle, action: PasteSelection }
+
+# Key bindings
+#
+# Key bindings are specified as a list of objects. For example, this is the
+# default paste binding:
+#
+# `- { key: V, mods: Control|Shift, action: Paste }`
+#
+# Each key binding will specify a:
+#
+# - `key`: Identifier of the key pressed
+#
+#    - A-Z
+#    - F1-F24
+#    - Key0-Key9
+#
+#    A full list with available key codes can be found here:
+#    https://docs.rs/glutin/*/glutin/event/enum.VirtualKeyCode.html#variants
+#
+#    Instead of using the name of the keys, the `key` field also supports using
+#    the scancode of the desired key. Scancodes have to be specified as a
+#    decimal number. This command will allow you to display the hex scancodes
+#    for certain keys:
+#
+#       `showkey --scancodes`.
+#
+# Then exactly one of:
+#
+# - `chars`: Send a byte sequence to the running application
+#
+#    The `chars` field writes the specified string to the terminal. This makes
+#    it possible to pass escape sequences. To find escape codes for bindings
+#    like `PageUp` (`"\x1b[5~"`), you can run the command `showkey -a` outside
+#    of tmux. Note that applications use terminfo to map escape sequences back
+#    to keys. It is therefore required to update the terminfo when changing an
+#    escape sequence.
+#
+# - `action`: Execute a predefined action
+#
+#   - ToggleViMode
+#   - Copy
+#   - Paste
+#   - PasteSelection
+#   - IncreaseFontSize
+#   - DecreaseFontSize
+#   - ResetFontSize
+#   - ScrollPageUp
+#   - ScrollPageDown
+#   - ScrollLineUp
+#   - ScrollLineDown
+#   - ScrollToTop
+#   - ScrollToBottom
+#   - ClearHistory
+#   - Hide
+#   - Minimize
+#   - Quit
+#   - ToggleFullscreen
+#   - SpawnNewInstance
+#   - ClearLogNotice
+#   - ClearSelection
+#   - ReceiveChar
+#   - None
+#
+#   (`mode: Vi` only):
+#   - Open
+#   - Up
+#   - Down
+#   - Left
+#   - Right
+#   - First
+#   - Last
+#   - FirstOccupied
+#   - High
+#   - Middle
+#   - Low
+#   - SemanticLeft
+#   - SemanticRight
+#   - SemanticLeftEnd
+#   - SemanticRightEnd
+#   - WordRight
+#   - WordLeft
+#   - WordRightEnd
+#   - WordLeftEnd
+#   - Bracket
+#   - ToggleNormalSelection
+#   - ToggleLineSelection
+#   - ToggleBlockSelection
+#   - ToggleSemanticSelection
+#
+#   (macOS only):
+#   - ToggleSimpleFullscreen: Enters fullscreen without occupying another space
+#
+#   (Linux/BSD only):
+#   - CopySelection: Copies into selection buffer
+#
+# - `command`: Fork and execute a specified command plus arguments
+#
+#    The `command` field must be a map containing a `program` string and an
+#    `args` array of command line parameter strings. For example:
+#       `{ program: "alacritty", args: ["-e", "vttest"] }`
+#
+# And optionally:
+#
+# - `mods`: Key modifiers to filter binding actions
+#
+#    - Command
+#    - Control
+#    - Option
+#    - Super
+#    - Shift
+#    - Alt
+#
+#    Multiple `mods` can be combined using `|` like this:
+#       `mods: Control|Shift`.
+#    Whitespace and capitalization are relevant and must match the example.
+#
+# - `mode`: Indicate a binding for only specific terminal reported modes
+#
+#    This is mainly used to send applications the correct escape sequences
+#    when in different modes.
+#
+#    - AppCursor
+#    - AppKeypad
+#    - Alt
+#
+#    A `~` operator can be used before a mode to apply the binding whenever
+#    the mode is *not* active, e.g. `~Alt`.
+#
+# Bindings are always filled by default, but will be replaced when a new
+# binding with the same triggers is defined. To unset a default binding, it can
+# be mapped to the `ReceiveChar` action. Alternatively, you can use `None` for
+# a no-op if you do not wish to receive input characters for that binding.
+#
+# If the same trigger is assigned to multiple actions, all of them are executed
+# at once.
+key_bindings:
+    # (Windows, Linux, and BSD only)
+  - { key: V,        mods: Control|Shift, action: Paste            }
+  - { key: C,        mods: Control|Shift, action: Copy             }
+  - { key: Insert,   mods: Shift,         action: PasteSelection   }
+  - { key: Key0,     mods: Control,       action: ResetFontSize    }
+  - { key: Equals,   mods: Control,       action: IncreaseFontSize }
+  - { key: Plus,     mods: Control,       action: IncreaseFontSize }
+  - { key: Minus,    mods: Control,       action: DecreaseFontSize }
+  # - { key: N,        mods: Control,       action: SpawnNewInstance }
+  - { key: M,        mods: Control,       action: Minimize         }
+
+
+#debug:
+  # Display the time it takes to redraw each frame.
+  #render_timer: false
+
+  # Keep the log file after quitting Alacritty.
+  #persistent_logging: false
+
+  # Log level
+  #
+  # Values for `log_level`:
+  #   - None
+  #   - Error
+  #   - Warn
+  #   - Info
+  #   - Debug
+  #   - Trace
+  #log_level: Warn
+
+  # Print all received window events.
+  #print_events: false
+
+# Custom colorscheme fitting Sweetified theme
+#colors:
+  #primary:
+    #background: '0x0a1124'
+    #foreground: '0xeec49a'
+  #cursor:
+    #text:       '0x0a1124'
+    #cursor:     '0xeec49a'
+  #normal:
+    #black:      '0x0a1124'
+    #red:        '0x5F4149'
+    #green:      '0xEB3247'
+    #yellow:     '0xBC4349'
+    #blue:       '0xF35645'
+    #magenta:    '0xF6A73B'
+    #cyan:       '0xFAD32F'
+    #white:      '0xeec49a'
+  #bright:
+    #black:      '0xa6896b'
+    #red:        '0x5F4149'
+    #green:      '0xEB3247'
+    #yellow:     '0xBC4349'
+    #blue:       '0xF35645'
+    #magenta:    '0xF6A73B'
+    #cyan:       '0xFAD32F'
+    #white:      '0xeec49a'
+
+# Colors (Gruvbox dark)
+colors:
+  #  primary:
+  #    # hard contrast background - '#1d2021'
+  #    background:        &gruvbox_dark_bg '#0a1124'
+  #    # soft contrast background - '#32302f'
+  #    foreground:        '#fbf1c7'
+  #    bright_foreground: '#f9f5d7'
+  #    dim_foreground:    '#f2e5bc'
+  #  cursor:
+  #    text:   CellBackground
+  #    cursor: CellForeground
+  #  vi_mode_cursor:
+  #    text:   CellBackground
+  #    cursor: CellForeground
+  #  # search:
+  #  #   matches:
+  #  #     foreground: '#000000'
+  #  #     background: '#ffffff'
+  #  #   focused_match:
+  #  #    foreground: CellBackground
+  #  #    background: CellForeground
+  #  #   bar:
+  #  #     background: ''
+  #  #     foreground: ''
+  #  # line_indicator:
+  #  #   foreground: None
+  #  #   background: None
+  #  selection:
+  #    text:       CellBackground
+  #    background: CellForeground
+  #  bright:
+  #    black:   '#928374'
+  #    red:     '#fb4934'
+  #    green:   '#b8bb26'
+  #    yellow:  '#fabd2f'
+  #    blue:    '#83a598'
+  #    magenta: '#d3869b'
+  #    cyan:    '#8ec07c'
+  #    white:   '#ebdbb2'
+  #  normal:
+  #    black:   *gruvbox_dark_bg
+  #    red:     '#cc241d'
+  #    green:   '#98971a'
+  #    yellow:  '#d79921'
+  #    blue:    '#458588'
+  #    magenta: '#b16286'
+  #    cyan:    '#689d6a'
+  #    white:   '#a89984'
+  #  dim:
+  #    black:   '#32302f'
+  #    red:     '#9d0006'
+  #    green:   '#79740e'
+  #    yellow:  '#b57614'
+  #    blue:    '#076678'
+  #    magenta: '#8f3f71'
+  #    cyan:    '#427b58'
+  #    white:   '#928374'
+
+  # indexed_colors: []
+
+   # primary:
+        # background: '0x000000'
+        # foreground: '0x09b1d6'
+#
+      # Colors that should be used to draw the terminal cursor. If these are unset,
+      # the cursor colour will be the inverse of the cell colour.
+      # cursor:
+        # text: '0x2e2e2d'
+        # text: '0x000000'
+        # cursor: '0xffffff'
+#
+      # Normal colors
+   # normal:
+        # black:   '0x123e7c'
+        # red:     '0xff0000'
+        # green:   '0xd300c4'
+        # yellow:  '0xf57800'
+        # blue:    '0x123e7c'
+        # magenta: '0x9b1fc4'
+        # cyan:    '0x0abdc6'
+        # white:   '0xd7d7d5'
+#
+      # Bright colors
+   # bright:
+        # black:   '0x1c61c2'
+        # red:     '0xff0000'
+        # green:   '0xd300c4'
+        # yellow:  '0xf57800'
+        # blue:    '0x00ff00'
+        # magenta: '0x9b1fc4'
+        # cyan:    '0x0abdc6'
+        # white:   '0xd7d7d5'
+#
+      # dim colors
+   # dim:
+        # black:   '0x1c61c2'
+        # red:     '0xff0000'
+        # green:   '0xd300c4'
+        # yellow:  '0xf57800'
+        # blue:    '0x123e7c'
+        # magenta: '0x9b1fc4'
+        # cyan:    '0x0abdc6'
+        # white:   '0xd7d7d5'
+
+   # primary:
+     # background: '0x000b1e'
+     # foreground: '0xa9b1d6'
+
+   # Normal colors
+   # normal:
+     # black:   '0x32344a'
+     # red:     '0xf7768e'
+     # green:   '0x9ece6a'
+     # yellow:  '0xe0af68'
+     # blue:    '0x7aa2f7'
+     # magenta: '0xad8ee6'
+     # cyan:    '0x449dab'
+     # white:   '0x787c99'
+
+   # Bright colors
+   # bright:
+     # black:   '0x444b6a'
+     # red:     '0xff7a93'
+     # green:   '0xb9f27c'
+     # yellow:  '0xff9e64'
+     # blue:    '0x7da6ff'
+     # magenta: '0xbb9af7'
+     # cyan:    '0x0db9d7'
+     # white:   '0xacb0d0'
+#
+#    tokyo-night-storm: &tokyo-night-storm
+#    # Default colors
+#    primary:
+#      background: '0x000b1e'
+#      foreground: '0xa9b1d6'
+#
+#    # Normal colors
+#    normal:
+#      black:   '0x32344a'
+#      red:     '0xf7768e'
+#      green:   '0x9ece6a'
+#      yellow:  '0xe0af68'
+#      blue:    '0x7aa2f7'
+#      magenta: '0xad8ee6'
+#      cyan:    '0x449dab'
+#      white:   '0x9699a8'
+#
+#    # Bright colors
+#    bright:
+#      black:   '0x444b6a'
+#      red:     '0xff7a93'
+#      green:   '0xb9f27c'
+#      yellow:  '0xff9e64'
+#      blue:    '0x7da6ff'
+#      magenta: '0xbb9af7'
+#      cyan:    '0x0db9d7'
+#      white:   '0xacb0d0'
+  # primary:
+  #   background: '#2e3440'
+  #   foreground: '#d8dee9'
+  #   dim_foreground: '#a5abb6'
+  # cursor:
+  #   text: '#2e3440'
+  #   cursor: '#d8dee9'
+  # vi_mode_cursor:
+  #   text: '#2e3440'
+  #   cursor: '#d8dee9'
+  # selection:
+  #   text: CellForeground
+  #   background: '#4c566a'
+  # search:
+  #   matches:
+  #     foreground: CellBackground
+  #     background: '#88c0d0'
+  #   bar:
+  #     background: '#434c5e'
+  #     foreground: '#d8dee9'
+  # normal:
+  #   black: '#3b4252'
+  #   red: '#bf616a'
+  #   green: '#a3be8c'
+  #   yellow: '#ebcb8b'
+  #   blue: '#81a1c1'
+  #   magenta: '#b48ead'
+  #   cyan: '#88c0d0'
+  #   white: '#e5e9f0'
+  # bright:
+  #   black: '#4c566a'
+  #   red: '#bf616a'
+  #   green: '#a3be8c'
+  #   yellow: '#ebcb8b'
+  #   blue: '#81a1c1'
+  #   magenta: '#b48ead'
+  #   cyan: '#8fbcbb'
+  #   white: '#eceff4'
+  # dim:
+  #   black: '#373e4d'
+  #   red: '#94545d'
+  #   green: '#809575'
+  #   yellow: '#b29e75'
+  #   blue: '#68809a'
+  #   magenta: '#8c738c'
+  #   cyan: '#6d96a5'
+  #   white: '#aeb3bb'
+
+# colors:
+  # primary:
+    # background: '0x000000'
+    # foreground: '0xdfbf8e'
+#
+  # normal:
+    # black:   '0x665c54'
+    # red:     '0xea6962'
+    # green:   '0xa9b665'
+    # yellow:  '0xe78a4e'
+    # blue:    '0x7daea3'
+    # magenta: '0xd3869b'
+    # cyan:    '0x89b482'
+    # white:   '0xdfbf8e'
+#
+  # bright:
+    # black:   '0x928374'
+    # red:     '0xea6962'
+    # green:   '0xa9b665'
+    # yellow:  '0xe3a84e'
+    # blue:    '0x7daea3'
+    # magenta: '0xd3869b'
+    # cyan:    '0x89b482'
+    # white:   '0xdfbf8e'
+    #
+  # primary:
+    # background: '0x000000'
+    # foreground: '0xffffff'
+#
+#
+  # normal:
+    # black:   '0x1e2127'
+    # red:     '0xe06c75'
+    # green:   '0x98c379'
+    # yellow:  '0xd19a66'
+    # blue:    '0x61afef'
+    # magenta: '0xc678dd'
+    # cyan:    '0x56b6c2'
+    # white:   '0x828791'
+#
+  # Bright colors
+  # bright:
+    # black:   '0x5c6370'
+    # red:     '0xe06c75'
+    # green:   '0x98c379'
+    # yellow:  '0xd19a66'
+    # blue:    '0x61afef'
+    # magenta: '0xc678dd'
+    # cyan:    '0x56b6c2'
+    # white:   '0xe6efff'
+
+
+  # primary:
+    # background: '0x000000'
+    # foreground: '0xabb2bf'
+
+    # Bright and dim foreground colors
+    #
+    # The dimmed foreground color is calculated automatically if it is not present.
+    # If the bright foreground color is not set, or `draw_bold_text_with_bright_colors`
+    # is `false`, the normal foreground color will be used.
+    #dim_foreground: '0x9a9a9a'
+    # bright_foreground: '0xe6efff'
+
+  # Cursor colors
+  #
+  # Colors which should be used to draw the terminal cursor. If these are unset,
+  # the cursor color will be the inverse of the cell color.
+  #cursor:
+  #  text: '0x000000'
+  #  cursor: '0xffffff'
+
+  # Normal colors
+  # normal:
+    # black:   '0x1e2127'
+    # red:     '0xe06c75'
+    # green:   '0x98c379'
+    # yellow:  '0xd19a66'
+    # blue:    '0x61afef'
+    # magenta: '0xc678dd'
+    # cyan:    '0x56b6c2'
+    # white:   '0x828791'
+    # black:   '#282c34'
+    # red:     '#e06c75'
+    # green:   '#98c379'
+    # yellow:  '#d19a66'
+    # blue:    '#61afef'
+    # magenta: '#c678dd'
+    # cyan:    '#56b6c2'
+    # white:   '#abb2bf'
+  # Bright colors
+  # bright:
+    # black:   '0x5c6370'
+    # red:     '0xe06c75'
+    # green:   '0x98c379'
+    # yellow:  '0xd19a66'
+    # blue:    '0x61afef'
+    # magenta: '0xc678dd'
+    # cyan:    '0x56b6c2'
+    # white:   '0xe6efff'
+    # black:   '#5c6370'
+    # red:     '#e06c75'
+    # green:   '#98c379'
+    # yellow:  '#d19a66'
+    # blue:    '#61afef'
+    # magenta: '#c678dd'
+    # cyan:    '#56b6c2'
+    # white:   '#ffffff'
+  # Dim colors
+  #
+  # If the dim colors are not set, they will be calculated automatically based
+  # on the `normal` colors.
+  # dim:
+    # black:   '0x1e2127'
+    # red:     '0xe06c75'
+    # green:   '0x98c379'
+    # yellow:  '0xd19a66'
+    # blue:    '0x61afef'
+    # magenta: '0xc678dd'
+    # cyan:    '0x56b6c2'
+    # white:   '0x828791'
+
+  # Indexed Colors
+  #
+  # The indexed colors include all colors from 16 to 256.
+  # When these are not set, they're filled with sensible defaults.
+  #indexed_colors:
+  #  - { index: 16, color: '0x000000' }
+  #
+  # Colors (Gruvbox Material Dark Medium)
+# colors:
+#   primary:
+#     background: '0x000000'
+#     foreground: '0xdfbf8e'
+
+#   normal:
+#     black:   '0x665c54'
+#     red:     '0xea6962'
+#     green:   '0xa9b665'
+#     yellow:  '0xe78a4e'
+#     blue:    '0x7daea3'
+#     magenta: '0xd3869b'
+#     cyan:    '0x89b482'
+#     white:   '0xdfbf8e'
+
+#   bright:
+#     black:   '0x928374'
+#     red:     '0xea6962'
+#     green:   '0xa9b665'
+#     yellow:  '0xe3a84e'
+#     blue:    '0x7daea3'
+#     magenta: '0xd3869b'
+#     cyan:    '0x89b482'
+#     white:   '0xdfbf8e'
+#colors:
+#  # Default colors
+#  primary:
+#    background: '0x202630'
+#    #background: '0x131313'
+#    foreground: '0xcbd2df'
+#
+#  # Normal colors
+#  normal:
+#    black:   '0x282c34'
+#    red:     '0xff6c6b'
+#    green:   '0x98be65'
+#    yellow:  '0xecbe7b'
+#    blue:    '0x51afef'
+#    magenta: '0xc678dd'
+#    cyan:    '0x46d9ff'
+#    white:   '0xbbc2cf'
+
+######------GRUVBOX-------######
+  primary:
+    background: '#282828'
+    foreground: '0xdfbf8e'
+
+  normal:
+    black:   '0x665c54'
+    red:     '0xea6962'
+    green:   '0xa9b665'
+    yellow:  '0xe78a4e'
+    blue:    '0x7daea3'
+    magenta: '0xd3869b'
+    cyan:    '0x89b482'
+    white:   '0xdfbf8e'
+
+  bright:
+    black:   '0x928374'
+    red:     '0xea6962'
+    green:   '0xa9b665'
+    yellow:  '0xe3a84e'
+    blue:    '0x7daea3'
+    magenta: '0xd3869b'
+    cyan:    '0x89b482'
+    white:   '0xdfbf8e'
