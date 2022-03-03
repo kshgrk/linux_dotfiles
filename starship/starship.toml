@@ -4,7 +4,8 @@
 add_newline = false
 
 [username]
-format = " [$user]($style) -> "
+#format = " [$user]($style) -> "
+format = "   at [$user]($style) "
 style_user = "bold cyan"
 style_root = "bold cyan"
 show_always = true
@@ -71,7 +72,7 @@ disabled = true
 
 # Prompt: param 2 └─
 [character]
-success_symbol = " [λ:](cyan)"
+success_symbol = " [ :](foreground)"
 error_symbol = " [×](cyan)"
 
 # SYMBOLS
