@@ -90,7 +90,7 @@ scrolling:
 # Font configuration
 font:
   # Normal (roman) font face
-  size: 9.5
+  size: 9.5 
   normal:
     # Font family
     #
@@ -632,7 +632,7 @@ colors:
   #  #     foreground: ''
   #  # line_indicator:
   #  #   foreground: None
-  #  #   background: None
+  #  #   background: None     
   #  selection:
   #    text:       CellBackground
   #    background: CellForeground
